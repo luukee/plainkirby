@@ -1,0 +1,17 @@
+Title: About
+
+----
+
+Text: 
+
+----
+
+Coverimage: img_4768.jpg
+
+----
+
+Email: kaitlin.moor11@gmail.com
+
+----
+
+Emailtext: Email me

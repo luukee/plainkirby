@@ -1,0 +1,63 @@
+body,
+time {
+    font-family: $base-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    font-family: $title-font-family;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+	color: $primary-color;
+    font-size: 3em;
+    @media print, screen and (max-width: 30em) {
+        font-size: 2.5em;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+	text-transform: uppercase;
+}
+
+// site title
+.title,
+.title a {
+    font-size: 1em;
+    color: $white;
+    @media screen and (max-width: 30em) {
+        color: $black;
+    }
+}
+
+// date
+time {
+    color: $secondary-color;
+}
+
+// Font Awesome Icons
+.social {
+    a {
+        color: $white;
+        .fab {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 30em) {
+            color: $black;
+        }
+    }
+}
+
+time {
+    &.dark {
+        color: $black;
+        line-height: 40px;
+    }
+}

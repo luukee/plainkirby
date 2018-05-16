@@ -1,0 +1,13 @@
+Title: Blog Post 2
+
+----
+
+Coverimage: img_1621.jpg
+
+----
+
+Date: 2018-05-14
+
+----
+
+Text: Images are an important part of almost any website, and there are many ways to integrate them into yours: as single inline images or as galleries, as full screen images or preview thumbs. In this recipe, we will cover the most important things you need to know when working with images in the Panel and in your templates.

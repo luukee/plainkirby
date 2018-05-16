@@ -1,0 +1,29 @@
+title: Page
+
+pages: true
+
+files: true
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  social:
+    label: Social Icons 
+    type: structure
+    style: table
+    entry: >
+      {{icon}}{{link}}
+    fields:
+      icon:
+        label: Icon 
+        type: text
+      hyperlink:
+        label: URL 
+        type: url 
+
+
+
+
+

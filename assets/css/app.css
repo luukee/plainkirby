@@ -1,0 +1,470 @@
+ul {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #232323;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; }
+
+a:hover {
+  color: tomato; }
+
+body,
+time {
+  font-family: "Cormorant Garamond", serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: "Philosopher", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  color: #f90;
+  font-size: 3em; }
+  @media print, screen and (max-width: 30em) {
+    h1 {
+      font-size: 2.5em; } }
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase; }
+
+.title,
+.title a {
+  font-size: 1em;
+  color: #fff; }
+  @media screen and (max-width: 30em) {
+    .title,
+    .title a {
+      color: #000; } }
+
+time {
+  color: #9ffffa; }
+
+.social a {
+  color: #fff; }
+  .social a .fab {
+    font-size: 12px; }
+  @media screen and (max-width: 30em) {
+    .social a {
+      color: #000; } }
+
+time.dark {
+  color: #000;
+  line-height: 40px; }
+
+body {
+  border-right: 6px solid #fff;
+  border-left: 6px solid #fff;
+  border-top: 6px solid #fff;
+  overflow-x: hidden; }
+  @media screen and (max-width: 30em) {
+    body {
+      border-top: 0; } }
+
+.align-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right; }
+
+.align-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center; }
+
+.align-justify {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: justify; }
+
+.project-title,
+.project-date {
+  z-index: 5; }
+
+.project-section:first-child,
+.hero:not(.hidden) {
+  height: calc(100vh - 3rem);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .project-section:first-child img,
+  .hero:not(.hidden) img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.project-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center; }
+
+.project-section:not(:first-child) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 6px;
+  padding-left: 6px; }
+  @media screen and (max-width: 30em) {
+    .project-section:not(:first-child) {
+      padding-left: 0; } }
+  .project-section:not(:first-child):nth-child(2n-6) {
+    padding-left: 0; }
+  .project-section:not(:first-child) .img-cover,
+  .project-section:not(:first-child) a.img-cover {
+    height: 100%;
+    width: 100%; }
+  .project-section:not(:first-child) picture,
+  .project-section:not(:first-child) img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.Blog nav,
+.Blog .title,
+.Blog .social {
+  color: #000; }
+
+.blog,
+.article {
+  padding-top: 72px; }
+  .blog .blog-section,
+  .article .blog-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    @media print, screen and (min-width: 64em) {
+      .blog .blog-section:nth-of-type(3n+1),
+      .article .blog-section:nth-of-type(3n+1) {
+        padding-left: 0; }
+      .blog .blog-section:nth-of-type(3n+2),
+      .article .blog-section:nth-of-type(3n+2) {
+        padding: 0 .5%; }
+      .blog .blog-section:nth-of-type(3n+3),
+      .article .blog-section:nth-of-type(3n+3) {
+        padding-left: 0; } }
+    @media print, screen and (max-width: 64em) {
+      .blog .blog-section:nth-of-type(2n),
+      .article .blog-section:nth-of-type(2n) {
+        padding-left: 1%; } }
+    @media print, screen and (max-width: 30em) {
+      .blog .blog-section:nth-of-type(2n),
+      .article .blog-section:nth-of-type(2n) {
+        padding-left: 0; } }
+    .blog .blog-section .blog-image,
+    .blog .blog-section .blog-excerpt,
+    .article .blog-section .blog-image,
+    .article .blog-section .blog-excerpt {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .blog .blog-section .blog-image > a,
+    .article .blog-section .blog-image > a {
+      height: 17em;
+      overflow: hidden; }
+      .blog .blog-section .blog-image > a .img-cover,
+      .blog .blog-section .blog-image > a img,
+      .article .blog-section .blog-image > a .img-cover,
+      .article .blog-section .blog-image > a img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        width: 100%;
+        height: 100%; }
+    .blog .blog-section .blog-excerpt,
+    .article .blog-section .blog-excerpt {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1; }
+
+.img-cover {
+  position: relative;
+  width: 100%; }
+  .img-cover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transition: background .3s linear;
+    transition: background .3s linear; }
+
+.text-entry {
+  padding: 1rem 1em 3rem 1rem;
+  text-align: center; }
+
+.hidden {
+  position: absolute;
+  text-indent: -99rem; }
+
+.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 6px;
+  right: 6px;
+  z-index: 9;
+  padding-top: 2.5em;
+  margin: 1rem -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem; }
+  @media screen and (max-width: 30em) {
+    .main-nav {
+      position: fixed;
+      background: #fff;
+      color: #000;
+      padding: 1.5em 0;
+      margin: 0; } }
+  .main-nav .title,
+  .main-nav .social {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: relative;
+    list-style: none; }
+    .main-nav .title li:not(:last-child),
+    .main-nav .social li:not(:last-child) {
+      padding-right: 1em; }
+  .main-nav .title {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .main-nav .social {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    right: 30px; }
+
+.Blog header.main-nav a {
+  color: #000; }
+
+.Blog header.main-nav #menuToggle span {
+  background: #000; }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .pagination.blog-paginate {
+    width: 100%;
+    text-align: center; }
+  .pagination .left,
+  .pagination .right {
+    padding: 2rem; }
+  .pagination .pagination-item {
+    opacity: 0.3; }
+
+.footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 0; }
+  .footer ul li {
+    padding: 0 1rem; }
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 20px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none; }
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none; }
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 23px;
+  height: 2px;
+  margin-bottom: 4px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+  @media screen and (max-width: 30em) {
+    #menuToggle span {
+      background: #000; } }
+
+#menuToggle span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%; }
+
+#menuToggle span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%; }
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323; }
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2); }
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px); }
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 235px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+  @media print, screen and (max-width: 30em) {
+    #menu {
+      width: 155px; } }
+
+#menu li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0;
+  font-size: 22px; }
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none; }
+/*# sourceMappingURL=app.css.map */

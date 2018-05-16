@@ -1,0 +1,9 @@
+title: Blog
+
+options:
+    template: false
+    url: false
+
+pages: article
+
+files: false

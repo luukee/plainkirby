@@ -1,0 +1,6 @@
+- Projects: 
+    - image click lightbox
+    - pagination
+- Footer:
+    - style it
+    - 
