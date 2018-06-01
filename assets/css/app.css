@@ -198,7 +198,7 @@ body {
         -ms-flex: 1 0 auto;
             flex: 1 0 auto; }
   .blog-section .blog-image {
-    height: 18em;
+    height: 17em;
     overflow: hidden; }
     .blog-section .blog-image .img-cover,
     .blog-section .blog-image img {
