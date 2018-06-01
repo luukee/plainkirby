@@ -34,20 +34,40 @@ if (isset($limit)) {
 
             </div>
 
-        <!-- blog excerpt -->
-        <div class="blog-excerpt">
+
+        <div class="blog-excerpt grid-container">
             <!-- Title -->
-            <a href="<?= $article->url() ?>">
-                <h1 class="blog-title">
-                    <?= $article->title()->html() ?>
-                </h1>
-            </a>
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-6">
+                    <a href="<?= $article->url() ?>">
+                       <h2><?= $article->title()->html() ?></h2>
+                    </a>
+                </div>
 
-            <p><?= $article->text()->excerpt(300) ?></p>
+                <!-- Date -->
+                <div class="cell small-6 align-self-bottom shrink">
+                    <time class="align-right dark">
+                        <?= $article->date('F jS, Y') ?>
+                    </time>
+                </div>
 
-            <a href="<?= $article->url() ?>">Read more. . .</a>
+            </div>
+
+            <div class="grid-x grid-padding-x">
+                <!-- Excerpt -->
+                <p class="cell small-12">
+                    <?= $article->text()->excerpt(300) ?>
+                </p>
+            </div>
+
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12">
+                    <a href="<?= $article->url() ?>">Read more. . .</a>
+                </div>
+            </div>
 
         </div>
+
     </article>
 
 <?php endforeach ?>

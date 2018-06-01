@@ -40,13 +40,6 @@
             </p>
         </div>
 
-        <!-- Email -->
-        <div class="cell">
-            <a href="<?php echo 'mailto:' . $page->email() . '?Subject=Hello%20again' ?>" target="_top">
-                <?php echo $page->emailText()->html()?>
-            </a>
-        </div>
-
     </article>
 
 </main>

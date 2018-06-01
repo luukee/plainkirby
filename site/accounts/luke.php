@@ -7,8 +7,8 @@ email: carl.hartman11@gmail.com
 language: en
 role: admin
 history:
-  - blog/post-1
-  - blog/gunther
-  - projects/project-1
   - blog
-  - blog/blog-post-3
+  - projects
+  - projects/project-2
+  - projects/3
+  - about

@@ -1,9 +1,28 @@
 title: Blog
 
 options:
-    template: false
+    template: blog
     url: false
 
 pages: article
 
 files: false
+
+fields:
+    title:
+        label: Title
+        type: text
+
+    description:
+        label: SEO Description
+        type: textarea
+        help: A SEO/meta description is a snippet of up to 320 characters, that summarizes your page content for search engines. This will _not_ show on the frontend, it is only for the search bots!
+        width: 1/2
+        validate:
+            maxLength: 320
+
+    keywords:
+        label: SEO Keywords
+        type: textarea
+        width: 1/2
+        help: SEO/Meta Keywords are a specific tag that appear in the HTML code of a Web page and help tell search engines what the topic of the page is. Seperate each keyword with a comma. This will _not_ show on the frontend, it is only for the search bots!

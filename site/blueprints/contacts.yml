@@ -1,0 +1,31 @@
+title: Contacts
+
+pages:
+    hide: true
+
+options:
+    # template: false
+    url: false
+    preview: false
+    status: false
+    delete: false
+
+files: false
+
+fields:
+    contacts:
+        label: Contacts
+        type: structure
+        fields:
+          firstname:
+            label: First Name
+            type: text
+          lastname:
+            label: Last Name
+            type: text
+          email:
+            label: Email
+            type: text
+          message:
+            label: Message
+            type: textarea

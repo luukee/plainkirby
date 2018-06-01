@@ -1,0 +1,35 @@
+input,
+label,
+textarea,
+form button {
+	@include form;
+	@include border-color;
+	@include border-radius;
+}
+
+textarea {
+	padding: .75em;
+	height: 8em;
+}
+label {
+	float: left;
+	text-align: right;
+	width: 100px;
+}
+
+input {
+	height: 2.5em;
+	&:focus {
+		border: 2px solid $primary-color;
+		line-height: 30px;
+	}
+}
+
+form button {
+	background: $tertiary-color;
+	@extend input;
+}
+
+.alert {
+	color: red;
+}

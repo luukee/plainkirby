@@ -10,20 +10,15 @@ fields:
     type:  text
 
   social:
-    label: Social Icons 
+    label: Social Icons
     type: structure
     style: table
     entry: >
       {{icon}}{{link}}
     fields:
       icon:
-        label: Icon 
+        label: Icon
         type: text
       hyperlink:
-        label: URL 
-        type: url 
-
-
-
-
-
+        label: URL
+        type: url

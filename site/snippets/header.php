@@ -34,14 +34,23 @@
     <meta property="og:image" content="http://stage.lukecarlhartman.com/content/1-projects/3-ants/cacti-2.jpg" />
     <meta property="og:description" content="Kaitlin Moor or Sweet Keet's Photography, Fashion and Blog" />
 
+    <?php if ($page->description() != ''): ?>
+    <meta name="description" content="<?= $page->description()->html() ?>" />
+    <?php else: ?>
+    <meta name="description" content="<?= $site->description()->html() ?>" />
+    <?php endif ?>
+
+    <?php if ($page->keywords() != ''): ?>
+    <meta name="keywords" content="<?= $page->keywords()->html() ?>" />
+    <?php else: ?>
+    <meta name="keywords" content="<?= $site->keywords()->html() ?>" />
+    <?php endif ?>
+
   <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
 
   <?= css('assets/css/foundation.css') ?>
   <?= css('assets/css/app.css') ?>
   <?= css('assets/css/jquery.fancybox.css') ?>
-
-  <!-- add jquery -->
-  <?= js('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js') ?>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Philosopher" rel="stylesheet">
@@ -50,7 +59,17 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 </head>
-<body class="<?= $page->getBodyClass() ?>">
+<!-- body element with dynamic class: based on the page -->
+<?php if ($page->isHomePage()): ?>
+  <body id="home">
+<?php else: ?>
+  <?php if ($page->hasVisibleChildren()): ?>
+    <body id="<?= $page->template() ?>-section">
+  <?php else: ?>
+    <body id="<?= $page->template() ?>-page">
+  <?php endif ?>
+<?php endif ?>
+
 	<header class="grid-x fluid main-nav">
 
 		<?php snippet('menu') ?>

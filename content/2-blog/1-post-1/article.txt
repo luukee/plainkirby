@@ -2,6 +2,14 @@ Title: post-1
 
 ----
 
+Description: Kaitlin Moor photography of rainbows.
+
+----
+
+Keywords: photography, rainbows, rainbow photography, Kaitlin Moor
+
+----
+
 Coverimage: download.png
 
 ----
@@ -10,7 +18,7 @@ Date: 2018-05-14
 
 ----
 
-Text: 
+Text:
 
 (image: screen-shot-2018-05-09-at-6.02.15-am.png) Inside each article folder, add a blogarticle.txt. By naming it like this, we can later add a blogarticle.php template to our template folder and create a specific template for all article.
 (image: screen-shot-2018-05-09-at-9.32.29-am.png)

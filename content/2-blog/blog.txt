@@ -1,4 +1,4 @@
-Title: Blog
+Title: Blog For Everybody!
 
 ----
 
@@ -11,3 +11,11 @@ Date: 2018-05-14
 ----
 
 Text: 
+
+----
+
+Description: Kaitlin Moor blogs about what she is totally into!
+
+----
+
+Keywords: photography, rainbows, rainbow photography, Kaitlin Moor

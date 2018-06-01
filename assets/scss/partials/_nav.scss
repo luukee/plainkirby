@@ -16,10 +16,21 @@
 	@media screen and (max-width: 30em) {
 		position: fixed;
 		background: $white;
-		color: $black;
 		padding: 1.5em 0;
 		margin: 0;
 	}
+	// all links
+	a {
+		color: $white;
+		@media screen and (max-width: 30em) {
+			color: $black;
+		}
+	}
+	// hamburger menu
+	nav {
+		padding-left: 0.9375rem;
+	}
+	// site title
 	.title,
 	.social  {
 		@include flex;
@@ -32,24 +43,23 @@
 	.title {
 		justify-content: center;
 	}
+	// site title
+	.title,
+	.title a {
+	    font-size: 1em;
+	}
 	.social {
 		justify-content: flex-end;
-		right: 30px;
+		padding-right: 0.9375rem;
 	}
 }
 
-// blog header
-.Blog {
-	header.main-nav {
-		a {
-			color: $black;
-		}
-		#menuToggle span {
-			background: $black;
-		}
-	}
-}
-
+#blog-section,
+#article-page {
+    header a {
+        color: $black;
+    }
+} // BLOG END
 
 
 // pagination

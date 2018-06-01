@@ -2,6 +2,14 @@ Title: Rainbows
 
 ----
 
+Description: Kaitlin Moor photography of rainbows.
+
+----
+
+Keywords: photography, rainbows, rainbow photography, Kaitlin Moor
+
+----
+
 Year: 2013
 
 ----
@@ -18,4 +26,4 @@ Cover-image: keet-rainbows-2.jpg
 
 ----
 
-Coverimage: keet-rainbows-2.jpg
+Coverimage: angel-city-designs-web-design-project-1-33-18.jpg

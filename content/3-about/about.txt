@@ -2,7 +2,29 @@ Title: About
 
 ----
 
-Text: 
+Email: kaitlin.moor11@gmail.com
+
+----
+
+Description: Kaitlin Moor photography of rainbows.
+
+----
+
+Keywords: photography, rainbows, rainbow photography, Kaitlin Moor
+
+----
+
+Emailtext: Email me
+
+----
+
+Contacts:
+
+-
+  firstname: dfad
+  lastname: kdadlkfj
+  email: lukecarlhartman@gmail.com
+  message: adfadf
 
 ----
 
@@ -10,8 +32,8 @@ Coverimage: img_4768.jpg
 
 ----
 
-Email: kaitlin.moor11@gmail.com
+Profileimage: img_1621.jpg
 
 ----
 
-Emailtext: Email me
+Text: My bio is long and strong.

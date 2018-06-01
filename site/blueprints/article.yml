@@ -9,24 +9,38 @@ options:
 
 fields:
     title:
-      label: Title
-      type:  title
+        label: Title
+        type:  title
 
     coverimage:
-      label: Cover Image
-      type:  image
-      width: 1/2
+        label: Cover Image
+        type:  image
+        width: 1/2
 
     date:
-      icon: calendar
-      label: Date
-      type: date
-      format: LL
-      placeholder: Select a date...
-      default: today
-      required: true
-      width: 1/2
+        icon: calendar
+        label: Date
+        type: date
+        format: LL
+        placeholder: Select a date...
+        default: today
+        required: true
+        width: 1/2
 
     text:
-      label: Text
-      type: textarea
+        label: Text
+        type: textarea
+
+    description:
+        label: SEO Description
+        type: textarea
+        help: A SEO/meta description is a snippet of up to 320 characters, that summarizes your page content for search engines. This will _not_ show on the frontend, it is only for the search bots!
+        width: 1/2
+        validate:
+            maxLength: 320
+
+    keywords:
+        label: SEO Keywords
+        type: textarea
+        width: 1/2
+        help: SEO/Meta Keywords are a specific tag that appear in the HTML code of a Web page and help tell search engines what the topic of the page is. Seperate each keyword with a comma. This will _not_ show on the frontend, it is only for the search bots!

@@ -24,14 +24,6 @@ body {
 }
 
 
-
-
-// main grid
-.project-title,
-.project-date {
-	z-index: 5;
-}
-
 // project page: header image
 .project-section:first-child,
 .hero:not(.hidden) {
@@ -50,10 +42,50 @@ body {
 	justify-content: center;
 	align-items: center;
 	align-self: center;
+	transform: scale(1.5);
+	transition: all .3s;
+	transition-timing-function: linear;
+	z-index: 8;
 }
+
 
 // project images
 .project-section {
+	// images overlay
+	.img-cover {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		img {
+			transition: all .3s;
+			transition-timing-function: linear;
+		}
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, .3);
+		}
+	}
+	// hover effect
+	&:hover {
+		// text
+		.project-info {
+			transform: scale(1.1);
+			z-index: 8;
+		}
+		// image
+		img {
+			transform: scale(1.1);
+		}
+	}
 	&:not(:first-child) {
 		display: flex;
 		flex-direction: column;
@@ -67,11 +99,6 @@ body {
 		&:nth-child(2n-6) {
 			padding-left: 0;
 		}
-		.img-cover,
-		a.img-cover {
-			height: 100%;
-			width: 100%;
-		}
 		picture,
 		img {
 			height: 100%;
@@ -81,6 +108,10 @@ body {
 	}
 }
 
+
+
+
+
 // blog
 .Blog {
 	nav,
@@ -89,76 +120,90 @@ body {
 		color: $black;
 	}
 }
-.blog,
-.article {
-	padding-top: 72px;
-	.blog-section {
-		display: flex;
-		flex-direction: column;
-		@media print, screen and (min-width: 64em) {
-			&:nth-of-type(3n+1) {
-				padding-left:0;
-			}
-			&:nth-of-type(3n+2) {
-				padding:0 .5%;
-			}
-			&:nth-of-type(3n+3) {
-				padding-left:0
-			}
+
+// blog pages
+#blog-section,
+#article-page {
+	main {
+		padding-top: 72px;
+	}
+}
+
+
+
+// blog feed
+.blog-section {
+	display: flex;
+	flex-direction: column;
+	// excerpt gets 50% of the available space
+	.blog-excerpt {
+		flex: 1 0 auto;
+	}
+	// image has a set height
+	.blog-image {
+		height: 18em;
+		overflow: hidden;
+		// overlay and the actual image full width and cover avail space
+		.img-cover,
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
-		@media print, screen and (max-width: 64em) {
-			&:nth-of-type(2n) {
-				padding-left: 1%;
-			}
-		}
+	}
+}
+
+/* HOME PAGE */
+#home {
+	#menuToggle span {
+    	background: $black;
+	}
+	.main-nav a {
+		color: $black;
+	}
+}
+
+// // // // // //
+// responsive grid
+// // // // // //
+.blog-section {
+// MOBILE
+	// select all but the first of nth-of-type
+	&:nth-of-type(n+2) {
+		// select all device size up to 30em (mobile)
 		@media print, screen and (max-width: 30em) {
-			&:nth-of-type(2n) {
-				padding-left: 0;
-			}
+			padding-top: 3rem;
 		}
-		.blog-image,
-		.blog-excerpt {
-	   		display: flex;
-			flex-direction: column;
-		 }
-		 .blog-image > a {
-			 height: 17em;
-			 overflow: hidden;
-			.img-cover,
-			 img {
-				 object-fit: cover;
-				 width: 100%;
-				 height: 100%;
-			 }
-		 }
-		 .blog-excerpt {
-			 flex-grow: 1;
-		 }
+	}
+
+// MEDIUM SCREENS
+	// select all but the first 3
+	&:nth-of-type(n+3) {
+		@media print, screen and (min-width: 40em) {
+			padding-top: 3em;
+		}
+	}
+	&:nth-of-type(2n) {
+		@media print, screen and (min-width: 40em) {
+			padding-left: 1%;
+		}
+	}
+
+// LARGE SCREENS
+	// start at the second, and apply the same rules to every third
+	&:nth-of-type(3n+2) {
+		@media print, screen and (min-width: 64em) {
+			padding-left: .5%;
+			padding-right: .5%;
+		}
+	}
+	&:nth-of-type(3) {
+		@media print, screen and (min-width: 64em) {
+			padding-top: 0;
+		}
 	}
 }
 
-
-// images overlay
-.img-cover {
-	position: relative;
-	width: 100%;
-	&:before {
-		content: "";
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background: rgba(0, 0, 0, .3);
-		-moz-transition: background .3s linear;
-		-webkit-transition: background .3s linear;
-		-o-transition: background .3s linear;
-		transition: background .3s linear;
-	}
-}
 
 // project blurb
 .text-entry {
@@ -171,4 +216,9 @@ body {
 .hidden {
 	position: absolute;
 	text-indent: -99rem;
+}
+
+.honey {
+  position: absolute;
+  left: -9999px;
 }

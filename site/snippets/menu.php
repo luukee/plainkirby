@@ -2,7 +2,7 @@
 
 $items = $pages->visible();
 
-if($items->count()):
+if ($items->count()):
 
 ?>
 <!-- Menu pulled from: https://codepen.io/luukee/pen/xjwyOV	 -->
@@ -25,5 +25,3 @@ if($items->count()):
 	</div>
 </nav>
 <?php endif ?>
-
-
