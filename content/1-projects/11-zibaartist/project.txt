@@ -1,0 +1,34 @@
+Title: Ziba
+
+----
+
+Date: 
+
+----
+
+Coverimage: homepage-animation-ziba-artist-web-development-by-luke-carl-hartman.jpg
+
+----
+
+Text: 
+
+Website developed for Ziba, the famous pop artist with a (link: http://www.zibaartist.com/archive/ text: huge collection) of work. 
+
+From Aspen to the Hamptons.
+
+** (link: http://zibaartist.com/ text: Visit the Site target: _blank) **
+
+
+Oh, and also an animation I made for Ziba's homepage. . .
+
+<div class="video-responsive">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9TCFAkwnatI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+----
+
+Description: Website developed for Ziba, the famous pop artist with a huge collection. From Aspen to the Hamptons.
+
+----
+
+Keywords: seo, wordpress, wordpress theme, web development, website development, html, css, javascript, jquery

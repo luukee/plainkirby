@@ -1,7 +1,7 @@
 title: Contacts
 
 pages:
-    hide: true
+    hide: false
 
 options:
     # template: false
@@ -10,7 +10,8 @@ options:
     status: false
     delete: false
 
-files: false
+files: true
+    sortable: true
 
 fields:
     contacts:

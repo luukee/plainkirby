@@ -6,7 +6,8 @@ options:
 
 pages: article
 
-files: false
+files: true
+    sortable: true
 
 fields:
     title:

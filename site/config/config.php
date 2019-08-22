@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 
 ---------------------------------------
@@ -35,6 +36,11 @@ c::set('home', 'projects');
 c::set('debug', true);
 
 // c::set('url', 'http://stage.lukecarlhartman.com/');
+
+// favicon
+c::set('panel.favicon', 'assets/images/favicon-16x16.png');
+
+
 
 // HOOKS
 

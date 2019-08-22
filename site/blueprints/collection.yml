@@ -1,0 +1,44 @@
+title: Collection
+
+files:
+    sortable: true
+
+pages: true
+
+options:
+    template: true
+    url: true
+
+fields:
+    title:
+        label: Title
+        type: text
+        width: 3/4
+
+    date:
+        label: Date
+        type: text
+        width: 1/4
+
+    coverimage:
+        label: Cover Image
+        type: image
+
+    text:
+        label: Text
+        type: textarea
+        help: Wrap your YouTube embed code in a div with the class="video-responsive" to post a responsive video.<br>Links open in a new tab, add "target:_blank" inside ()'s. Embed content go here embedresponsively.com.
+
+    description:
+        label: SEO Description
+        type: textarea
+        help: A SEO/meta description is a snippet of up to 165 characters, that summarizes your page content for search engines. This will _not_ show on the frontend, it is only for the search bots!
+        width: 1/2
+        validate:
+            maxLength: 165
+
+    keywords:
+        label: SEO Keywords
+        type: textarea
+        width: 1/2
+        help: SEO/Meta Keywords are a specific tag that appear in the HTML code of a Web page and help tell search engines what the topic of the page is. Seperate each keyword with a comma. This will _not_ show on the frontend, it is only for the search bots!

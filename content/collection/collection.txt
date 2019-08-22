@@ -1,0 +1,25 @@
+Title: Collection
+
+----
+
+Date: 
+
+----
+
+Coverimage: lg-home-all-image.png
+
+----
+
+Text: 
+
+(image: lg-home-callout.png)(image: lg-home-callout.png)
+This is some text
+(image: lg-home-callout.png)(image: lg-home-header-offset.png)
+
+----
+
+Description: 
+
+----
+
+Keywords: 

@@ -1,0 +1,29 @@
+Title: Jeni Herberger
+
+----
+
+Date: 
+
+----
+
+Coverimage: jeni-herberger-speaking-background-image-2.jpg
+
+----
+
+Text: 
+
+Web development project for entrepreneur, author and advisor (link: https://www.linkedin.com/in/jeniherberger/ text: Jeni Herberger target:_blank).  Site built using (link: https://artbees.net/ text: Artbees target:_blank) (link: https://themes.artbees.net/pages/jupiter-wordpress-theme-create-wordpress-websites/ text: Jupiter Theme target:_blank), jQuery and SCSS.   
+(link: https://schessa.com/ text: Schessa Garbutt target:_blank) designed the UX. Great job Schessa!
+
+## Plugins Credit:
+(link: https://ninjaforms.com/ text: Ninja Forms target:_blank), (link: https://wordpress.org/plugins/safe-svg/ text: Safe SVG target:_blank), 💚(link: https://wordpress.org/plugins/wp-scss/ text: WP-SCSS target:_blank) 💚
+
+ (link: http://www.jeniherberger.com/ text: Visit the site target:_blank)
+
+----
+
+Description: Web development project for entrepreneur, author and advisor Jeni Herberger.  Site built on WordPress using Artbees Jupiter Theme, jQuery and SASS. Ninja Forms, Safe SVG and 💚WP-SCSS💚.
+
+----
+
+Keywords: jeni herberger, wordpress, profile web development, sass, scss, jquery

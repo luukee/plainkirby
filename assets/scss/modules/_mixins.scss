@@ -23,15 +23,72 @@
 	border-bottom-color: rgb(238, 238, 238);
 	border-left-color: rgb(238, 238, 238);
 }
+@mixin lgHeroHeader {
+	height: calc(100vh - 3rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.15em;
+}
 
+@mixin darkOverlay {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background: rgba(0, 0, 0, .3);
+}
+
+@mixin smHeroHeader {
+    height: calc(100vh - 9rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 30em) {
+        margin-top: 40px;
+    }
+}
 @mixin border-radius {
 	border-radius: 4px;
 }
 
+@mixin inputShadow {
+	box-shadow: inset 0 2px 0 rgba(0,0,0, .15);
+}
+@mixin boxShadow {
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+@mixin boxShadowHover {
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+}
 // forms
 @mixin form {
 	box-sizing: border-box;
 	width: 17em;
 	margin: .5em 0;
 	padding: 0 .75em;
+}
+
+@mixin perspectiveRight {
+	transform: scale(.9) perspective(2910px) rotateY(-20deg) rotateX(5deg) rotate(1deg);
+	box-shadow: -1px -1px 5px 0 rgba(26, 26, 67, .05), -12px 20px 125px -25px rgba(50, 50, 93, .5), -18px 20px 75px -37.5px rgba(0, 0, 0, .6);
+	border-radius: 14px;
+}
+
+@mixin perspectiveLeft {
+	transform: scale(.9) perspective(2910px) rotateY(20deg) rotateX(5deg) rotate(-1deg);
+	box-shadow: -1px -1px 5px 0 rgba(26, 26, 67, .05), -12px 20px 125px -25px rgba(50, 50, 93, .5), -18px 20px 75px -37.5px rgba(0, 0, 0, .6);
+	border-radius: 14px;
+}
+@mixin perspectiveHero {
+	transform: scale(0.9) perspective(2910px) rotateY(0deg) rotateX(0deg) rotate(0deg);
+	box-shadow: -1px -1px 5px 0 rgba(26, 26, 67, .05), -12px 20px 125px -25px rgba(50, 50, 93, .5), -18px 20px 75px -37.5px rgba(0, 0, 0, .6);
+	border-radius: 14px;
 }

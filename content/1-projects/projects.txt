@@ -6,15 +6,15 @@ Text:
 
 ----
 
-Description: Kaitlin Moor creative projects.
+Description: Front End Web Developer and creative enthusiast Luke Carl Hartman web, email, video and other enthralling projects.
 
 ----
 
-Keywords: photography, rainbows, rainbow photography, Kaitlin Moor
+Keywords: web development, web design, creative projects
 
 ----
 
-Introtitle: Howdy! My name is Luke. I design websites.
+Introtitle: Howdy! <br> My name is Luke. <br>I create things on computers.
 
 ----
 
@@ -22,4 +22,33 @@ Coverimage:
 
 ----
 
-Introtext: Producing high-quality mobile-first websites and so much more!
+Introtext: 
+
+Developing searchable, mobile-first websites for your enjoyment.
+    <div class="effect">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>jQuery</li>
+            <li>SEO</li>
+            <li>Schema</li>
+            <li>AdobeCreativeSuite</li>
+            <li>GoogleSuite</li>
+            <li>WordPress</li>
+            <li>Kirby</li>
+            <li>Squarespace</li>
+            <li>SASS</li>
+            <li>Ajax</li>
+            <li>vue.js</li>
+            <li>Vuetify</li>
+            <li>Foundation.Zurb</li>
+            <li>Animation</li>
+            <li>PHP</li>
+            <li>EmailDev</li>
+            <li>Mailchimp</li>
+            <li>ConstantContact</li>
+            <li>Music</li>
+            <li>Reason</li>
+        </ul>
+    </div>

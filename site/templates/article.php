@@ -37,10 +37,10 @@
 			</header>
 
 			<!-- copy -->
-			<div class="text grid-x grid-padding-x">
-				<p class="cell"
+			<div class="medium-12">
+				<p>
 					<?= $page->text()->kirbytext() ?>
-				</div>
+				</p>
 			</div>
 
 	</main>

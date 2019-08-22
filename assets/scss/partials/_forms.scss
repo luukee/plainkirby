@@ -10,6 +10,10 @@ form button {
 textarea {
 	padding: .75em;
 	height: 8em;
+	@include inputShadow
+	@media screen and(max-width: 30em) {
+		width: 14em;
+	}
 }
 label {
 	float: left;
@@ -19,15 +23,22 @@ label {
 
 input {
 	height: 2.5em;
+	@include inputShadow;
 	&:focus {
 		border: 2px solid $primary-color;
 		line-height: 30px;
+	}
+	@media screen and(max-width: 30em) {
+		width: 14em;
 	}
 }
 
 form button {
 	background: $tertiary-color;
 	@extend input;
+	@media screen and(max-width: 30em) {
+		width: 14em;
+	}
 }
 
 .alert {

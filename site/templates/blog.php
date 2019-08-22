@@ -35,7 +35,7 @@ if (isset($limit)) {
             </div>
 
 
-        <div class="blog-excerpt grid-container">
+        <div class="blog-excerpt">
             <!-- Title -->
             <div class="grid-x grid-padding-x">
                 <div class="cell small-6">
@@ -56,7 +56,7 @@ if (isset($limit)) {
             <div class="grid-x grid-padding-x">
                 <!-- Excerpt -->
                 <p class="cell small-12">
-                    <?= $article->text()->excerpt(300) ?>
+                    <?= $article->text()->kirbytext()->excerpt(300) ?>
                 </p>
             </div>
 

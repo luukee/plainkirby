@@ -7,8 +7,8 @@ email: carl.hartman11@gmail.com
 language: en
 role: admin
 history:
-  - blog
-  - projects
-  - projects/project-2
   - projects/3
-  - about
+  - collection
+  - projects/crankshaft
+  - blog/front-end-web-developer-treehouse-courses
+  - projects/angel-city

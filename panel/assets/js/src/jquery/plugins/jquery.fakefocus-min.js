@@ -1,0 +1,1 @@
+!function($){$.fn.fakefocus=function(n){return this.each(function(){$(this).on({click:function(){$(this).find("input, textarea, select").focus()},focusin:function(){$(this).addClass(n)},focusout:function(){$(this).removeClass(n)}})})}}(jQuery);

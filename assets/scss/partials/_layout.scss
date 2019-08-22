@@ -1,13 +1,29 @@
 
+html, body {
+  overflow-x: hidden;
+}
 body {
+	position: relative;
 	border-right: 6px solid $white;
 	border-left: 6px solid $white;
 	border-top: 6px solid $white;
 	overflow-x: hidden;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg width='76' height='18' viewBox='0 0 76 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 18c-2.43-1.824-4-4.73-4-8 0-4.418-3.582-8-8-8H0V0h20c5.523 0 10 4.477 10 10 0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-5.523 4.477-10 10-10v2c-4.418 0-8 3.582-8 8 0 3.27-1.57 6.176-4 8H32zM64 0c-1.67 1.256-3.748 2-6 2H38c-2.252 0-4.33-.744-6-2h32z' fill='%239C92AC' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
+	main {
+		padding: 0 6px
+	}
 	@media screen and (max-width: 30em) {
 		border-top: 0;
+		border-right: 0;
+		border-left: 0;
 	}
 }
+
 .align-right {
 	display: flex;
 	text-align: right;
@@ -15,7 +31,7 @@ body {
 
 .align-center {
 	display: flex;
-  text-align: center;
+	text-align: center;
 }
 
 .align-justify {
@@ -23,87 +39,162 @@ body {
   	text-align: justify;
 }
 
-
+// paragraphs in articles, blogs etc.
+main article header > p {
+	@media print, screen and (min-width: 40em) {
+		padding: 0 12em;
+	}
+}
 // project page: header image
 .project-section:first-child,
-.hero:not(.hidden) {
+.hero {
 	@include lgHeroHeader;
 	img {
 		height: 100%;
 		object-fit: cover;
 	}
 }
-
-// Project meta
-.project-info {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	justify-content: center;
-	align-items: center;
-	align-self: center;
-	transform: scale(1.5);
-	transition: all .3s;
-	transition-timing-function: linear;
-	z-index: 8;
+body:not(#home) .hero {
+	.img-cover {
+		@media screen and (min-width: 812px)  {
+			@include perspectiveHero;
+		}
+	}
+	img {
+		border-radius: 14px;
+	}
+}
+// about page animation
+// https://css-tricks.com/animate-a-container-on-mouse-over-using-perspective-and-transform/
+#container {
+	transform: scale(.9);
+	border-radius: 14px;
+	#inner {
+		border-radius: 14px;
+        transition: transform 0.5s;
+	    box-shadow: -1px -1px 5px 0 rgba(26,26,67,0.05), -12px 20px 125px -25px rgba(50,50,93,0.5), -18px 20px 75px -37.5px rgba(0,0,0,0.6);
+		img {
+			border-radius: 14px;
+		}
+	}
 }
 
-
-// project images
-.project-section {
-	// images overlay
-	.img-cover {
-		position: relative;
-		height: 100%;
-		width: 100%;
-		overflow: hidden;
-		img {
-			transition: all .3s;
-			transition-timing-function: linear;
-		}
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: rgba(0, 0, 0, .3);
+//
+// HERO header
+//
+.hero {
+	.project-info {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-self: flex-end;
+        padding: 3em;
+        transition: all .3s;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        @media screen and (max-width: 30em) {
+            padding: 1em;
 		}
 	}
-	// hover effect
+
+}
+
+//
+// IMAGE/PROJECT CONTAINER
+//
+.img-cover {
+    position: relative;
+    overflow: hidden;
+}
+.project-section {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 6px;
+	padding-left: 6px;
+	transition: all .4s ease-out 0s;
+	@media screen and (max-width: 30em) {
+		padding-left: 0;
+	}
 	&:hover {
-		// text
+		transform: scale(1.03);
+	}
+
+	&:nth-child(2n+3) {
 		.project-info {
-			transform: scale(1.1);
-			z-index: 8;
+			@media screen and (min-width: 812px)  {
+				// @include perspectiveRight;
+			}
 		}
-		// image
-		img {
-			transform: scale(1.1);
+		.img-cover {
+			@media screen and (min-width: 812px)  {
+				@include perspectiveRight;
+			}
 		}
+	}
+	&:nth-child(2n+2) {
+		.project-info {
+			@media screen and (min-width: 812px)  {
+				// @include perspectiveLeft;
+			}
+		}
+		.img-cover {
+			@media screen and (min-width: 812px)  {
+				@include perspectiveLeft;
+			}
+		}
+	}
+	// picture element container
+	.img-cover {
+		height: 100%;
+		object-fit: cover;
+		overflow: hidden;
+	}
+	// EXCEPTIONS
+	&:nth-child(2n-6) {
+		padding-left: 0;
 	}
 	&:not(:first-child) {
+		height: 23em;
+		max-height: 400px;
+	}
+	// picture element meta
+	.project-info {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding-top: 6px;
-		padding-left: 6px;
+		position: absolute;
+		align-self: flex-end;
+		z-index: 8;
+		padding: 1em;
+	}
+	picture,
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	.project-title {
+		display: none;
+	}
+} // END .project-section
+
+
+// project images HOVER
+.project-section:hover {
+	&:not(:first-child) {
+		display: flex;
 		@media screen and (max-width: 30em) {
 			padding-left: 0;
 		}
 		&:nth-child(2n-6) {
 			padding-left: 0;
-		}
-		picture,
-		img {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
 		}
 	}
 }
@@ -160,6 +251,24 @@ body {
 	}
 	.main-nav a {
 		color: $black;
+	}
+	.hero > section {
+	    position: absolute;
+	    display: flex;
+	    flex-direction: column;
+	    align-self: center;
+	    padding: 0 1em;
+	}
+	.hero > .img-cover:before {
+	    content: "";
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	}
+	.project-section:first-child .img-cover {
+		@media screen and (min-width: 812px)  {
+			@include perspectiveHero;
+		}
 	}
 }
 
@@ -221,4 +330,39 @@ body {
 .honey {
   position: absolute;
   left: -9999px;
+}
+
+// about page
+
+.about-page {
+	.grid-container {
+		padding-top: 2em;
+	}
+}
+
+// iframes
+.embed-container {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	padding-bottom: 100% !important;
+	// margin: 1em 3em 3em 3em;
+    box-shadow: 4px 3px 15px 0 rgba(0,0,0,.2);
+	@media print, screen and (min-width: 64em) {
+		// margin: 1em 10em 3em 10em;
+	}
+	@media print, screen and (max-width: 30em) {
+		display: none;
+	}
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

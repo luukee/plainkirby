@@ -1,0 +1,29 @@
+Title: Julie & Max
+
+----
+
+Date: 
+
+----
+
+Coverimage: luke-carl-hartman-web-development-project-julie-and-max-weiner-cover-image.jpg
+
+----
+
+Text: 
+
+I built Julie and Max's website when Kait and I first met them. Seems so long ago now.
+
+Such a great couple.
+
+I used Foundation.
+
+**(link: http://www.julieandmax.com/index.html text: Visit the Site target:_blank)**
+
+----
+
+Description: I built Julie and Max's website when Kait and I first met them. Seems so long ago now. Such a great couple.
+
+----
+
+Keywords: foundation, julie and max,

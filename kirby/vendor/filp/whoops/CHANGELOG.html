@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="2.1.0">2.1.0</h1>
+
+<ul>
+<li>Add a <code>SystemFacade</code> to allow clients to override Whoops behavior.</li>
+<li>Show frame arguments in <code>PrettyPageHandler</code>.</li>
+<li>Highlight the line with the error.</li>
+<li>Add icons to search on Google and Stack Overflow.</li>
+</ul>
+
+<h1 id="2.0.0">2.0.0</h1>
+
+<p>Backwards compatibility breaking changes:</p>
+
+<ul>
+<li><code>Run</code> class is now <code>final</code>. If you inherited from <code>Run</code>, please now instead use a custom <code>SystemFacade</code> injected into the <code>Run</code> constructor, or contribute your changes to our core.</li>
+<li>PHP &lt; 5.5 support dropped.</li>
+</ul>
+
+</body>
+</html>
+

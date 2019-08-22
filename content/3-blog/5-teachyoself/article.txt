@@ -1,0 +1,33 @@
+Title: TeachYoself
+
+----
+
+Coverimage: teach-yourself-how-to-code-blog-post-by-luke-carl-hartman-main-image-1950-huge-computer.jpg
+
+----
+
+Date: 2018-07-11
+
+----
+
+Text: 
+
+I wrote an email to a developer friend of mine named Josh (great guy & a developer for the past decade!!) and I thought I should put it on my blog. So here you have it:
+
+I've been using (link: https://teamtreehouse.com/ text: Treehouse target:_blank) for all of my code learning. Treehouse has an excellent UI and it puts you on a track to an endpoint(mine is Front End Developer), but it's $25/month. 
+
+I started out using (link: http://lynda.com/ text: Lynda.com target:_blank), the cool thing about Lynda is you automatically have a free subscription if you have a (link: https://www.lapl.org/about-lapl/contact-us/adult-library-card-pre-registration text: Los Angeles Public Library Card target:_blank), I'm sure it will be the same with you in San Diego.
+
+I've also used (link: https://www.freecodecamp.org/ text: Code Camp target:_blank), its free and a great way to learn (I wish I knew about it before Treehouse so I didn't get started on a track and spend $$ ;)
+
+Also, on iOS there's (link: https://www.sololearn.com/ text: Solo Learn target:_blank) and (link: http://lrnapp.com/ text: Lrn target:_blank). I've completed several full courses on Solo Learn.
+
+Good stuff! Let me know if you have any more questions!
+
+----
+
+Description: Teach yourself how to code. There are soooo many resources to use. I've provided my best used tools in this post. Like Treehouse, Lynda and more. . .
+
+----
+
+Keywords: treehouse, learning, lynda, solo learn, code camp, teach yourself

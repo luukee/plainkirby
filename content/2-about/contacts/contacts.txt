@@ -1,0 +1,32 @@
+Contacts: 
+
+- 
+  firstname: Brian
+  lastname: Sherman
+  email: newvisitors@planetmail.com
+  message: |
+    Hi,
+    
+    Would you like 5,000 visitors coming to your website in one week?
+    These are people interested in your business category.
+    High quality website traffic at an affordable price.
+    
+    Our traffic comes to you from major online publications in your websites niche.
+    No one else offers this but us.
+    
+    Get 5,000 targeted visitors to your site in 7 days for $49.99.
+    You will receive a tracking URL to see your traffic live.
+    
+    Larger packages available.
+    
+    For more info or to place an order please go to https://traffic-stampede.com
+    
+    Hope to see you on our website.
+    
+    Best regards,
+    Brian
+    Traffic Stampede
+
+----
+
+Title: contacts

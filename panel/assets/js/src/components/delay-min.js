@@ -1,0 +1,1 @@
+var Delay=function(){var t={},r=function(r,n,o){e(r),t[r]=setTimeout(n,o)},e=function(r){if(r)t[r]&&clearTimeout(t[r]);else for(var r in t)t.hasOwnProperty(r)&&e(r)};return{start:r,stop:e}};

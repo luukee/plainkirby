@@ -1,0 +1,1 @@
+!function($){$.slug=function(e){return e=$.trim(e.toLowerCase()),$.each($.slug.table||{},function(r,a){e=e.split(r).join(a)}),e.replace(/[^\x09\x0A\x0D\x20-\x7E]/,"").replace(/[^a-z0-9]/gi,"-").replace(/(-)\1+/g,"-").replace(/-+$/,"").replace(/^-+/,"")}}(jQuery);

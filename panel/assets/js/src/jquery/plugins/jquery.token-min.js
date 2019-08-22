@@ -1,0 +1,1 @@
+!function($){$.token=function(n){var n=n||28,r="abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789!@#$%&*?",t="";for(x=0;x<n;x++)t+=r[Math.floor(r.length*Math.random())];return t}}(jQuery);

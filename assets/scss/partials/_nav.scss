@@ -1,6 +1,6 @@
 
 // top navigation
-.main-nav {
+.main-nav{
 	display: flex;
 	box-sizing: border-box;
 	position: absolute;
@@ -11,24 +11,30 @@
 	z-index: 9;
 	padding-top: 2.5em;
 	margin: 1rem -9999rem;
-	/* add back negative margin value */
 	padding: 0.25rem 9999rem;
 	@media screen and (max-width: 30em) {
 		position: fixed;
-		background: $white;
-		padding: 1.5em 0;
+		background: rgba(255, 255, 255, 0.97);
+		padding: 0.75em 0;
 		margin: 0;
+		width: 100%;
+		left: 0;
+		right: 0;
+		box-shadow: -1px -1px 5px 0 rgba(26,26,67,0.01), -12px 20px 125px -25px rgba(50,50,93,0.1), -18px 20px 75px -37.5px rgba(0,0,0,0.1)
 	}
 	// all links
 	a {
-		color: $white;
+		color: $black;
+		z-index: 5;
 		@media screen and (max-width: 30em) {
 			color: $black;
+			z-index: 5;
 		}
 	}
 	// hamburger menu
 	nav {
 		padding-left: 0.9375rem;
+		z-index: 9;
 	}
 	// site title
 	.title,
@@ -36,6 +42,12 @@
 		@include flex;
 		position: relative;
 		list-style: none;
+		z-index: 5;
+			li {
+				@media screen and (max-width: 30em) {
+					padding-right: .5em;
+				}
+			}
 			li:not(:last-child) {
 			padding-right: 1em;
 		}
@@ -46,18 +58,39 @@
 	// site title
 	.title,
 	.title a {
-	    font-size: 1em;
+	    font-size: .75em;
+		text-align: center;
+		@media screen and (max-width: 30em) {
+			font-size: .8em;
+		}
 	}
 	.social {
 		justify-content: flex-end;
 		padding-right: 0.9375rem;
 	}
+} // main nav END
+header.main-nav::before {
+	background-image: url("/content/luke-carl-hartman-website-title-background.svg");
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	@media screen and (max-width: 30em) {
+		width: 135%;
+	}
 }
-
-#blog-section,
-#article-page {
-    header a {
-        color: $black;
+// pages with a white background
+#project-page {
+    header.main-nav .title a,
+	header.main-nav .social a {
+        // color: $white;
+		@media screen and (max-width: 30em) {
+			color: $black;
+		}
     }
 } // BLOG END
 
@@ -76,6 +109,13 @@
 	}
 	.pagination-item {
 		opacity: 0.3;
+		.fas::before {
+			text-shadow: 2px 2px 7px #0000009c;
+		}
+		&:hover {
+			opacity: 1;
+			text-shadow: 1px 1px 2px #0000009c;
+		}
 	}
 }
 

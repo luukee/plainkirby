@@ -3,20 +3,22 @@ title: Profile
 pages: true
 
 files: true
+    sortable: true
 
 fields:
   title:
-    label: Title 
+    label: Title
     type:  text
-  
+
   coverImage:
-    label: Cover Image 
+    label: Cover Image
     type: image
-  
+
   text:
-    label: Text 
+    label: Text
     type: textarea
-  
+    help: Embed content go here embedresponsively.com
+
   year:
     label: Year
     type: text

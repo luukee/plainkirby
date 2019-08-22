@@ -6,19 +6,6 @@
 
 		<header class="hero">
 
-			<!-- header title -->
-			<div class="project-info">
-
-				<h1 class="project-title">
-				<?= $page->title()->html() ?>
-				</h1>
-
-				<time class="project-date">
-				<?= $page->date('F j, Y'); ?>
-				</time>
-
-			</div>
-
 			<!-- header image -->
 			<div class="img-cover">
 				<picture class="hero-img">
@@ -32,6 +19,14 @@
 					<?php endif ?>
 
 				</picture>
+				<!-- header title -->
+				<div class="project-info">
+
+					<h1 class="project-title">
+					<?= $page->title()->html() ?>
+					</h1>
+
+				</div>
 			</div>
 
 		</header>
@@ -42,23 +37,28 @@
 			<!-- title -->
 			<header class="medium-12 text-entry">
 
-				<?= $page->text()->html() ?>
+				<?= $page->text()->kirbytext() ?>
 
 			</header>
 
-			<!-- background image -->
-			<?php foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
+			<?php
+            $images = $page->images()->sortBy('sort', 'asc');
+            $first = $images->first();
+            $images = $images->not($first);
+            foreach ($images as $img): ?>
+			<!-- print images... -->
 
-			<a class="project-section medium-6" data-fancybox="<?= $page->title()->html() ?>-gallery" href="<?= $image->url() ?>">
+			<a class="project-section medium-6" data-fancybox="<?= $page->title()->html() ?>-gallery" href="<?= $img->url() ?>">
 				<div class="img-cover">
 					<picture class="medium-6">
-						<source media="(max-width: 768px)" srcset="<?= $image->url() ?>">
-						<img src="<?= $image->url() ?>" alt="<?= $page->title()->html() ?>" />
+						<source media="(max-width: 768px)" srcset="<?= $img->url() ?>">
+						<img src="<?= $img->url() ?>" alt="<?= $page->title()->html() ?>" />
 					</picture>
 				</div>
 			</a>
 
 			<?php endforeach ?>
+
 
 		</article>
 

@@ -1,0 +1,1 @@
+!function($){$.fn.message=function(){return this.each(function(){var e=$(this),o=e.closest("form");e.on("close",function(){e.remove(),o.find(".field-with-error").removeClass("field-with-error"),o.find("[autofocus]").focus(),$(document).trigger("keyup.center")}),e.on("click",function(){e.trigger("close")})})}}(jQuery);

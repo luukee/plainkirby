@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirbymetatagsreleasehttps:img.shields.iogithubreleasepedroborgeskirby-meta-tags.svghttps:github.compedroborgeskirby-meta-tagsreleasesissueshttps:img.shields.iogithubissuespedroborgeskirby-meta-tags.svghttps:github.compedroborgeskirby-meta-tagsissues">Kirby Meta Tags <a href="https://github.com/pedroborges/kirby-meta-tags/releases"><img src="https://img.shields.io/github/release/pedroborges/kirby-meta-tags.svg" alt="Release" /></a> <a href="https://github.com/pedroborges/kirby-meta-tags/issues"><img src="https://img.shields.io/github/issues/pedroborges/kirby-meta-tags.svg" alt="Issues" /></a></h1>
+
+<p>HTML meta tags generator for Kirby. Supports <a href="http://ogp.me">Open Graph</a> and <a href="https://dev.twitter.com/cards/overview">Twitter Cards</a> out of the box.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>Kirby 2.3.2+</li>
+<li>PHP 5.4+</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="download">Download</h3>
+
+<p><a href="https://github.com/pedroborges/kirby-meta-tags/archive/master.zip">Download the files</a> and place them inside <code>site/plugins/meta-tags</code>.</p>
+
+<h3 id="kirbycli">Kirby CLI</h3>
+
+<p>Kirby&#8217;s <a href="https://github.com/getkirby/cli">command line interface</a> is the easiest way to install the Meta Tags plugin:</p>
+
+<pre><code>$ kirby plugin:install pedroborges/kirby-meta-tags
+</code></pre>
+
+<p>To update it simply run:</p>
+
+<pre><code>$ kirby plugin:update pedroborges/kirby-meta-tags
+</code></pre>
+
+<h3 id="gitsubmodule">Git Submodule</h3>
+
+<p>You can add the Meta Tags as a Git submodule.</p>
+
+<details>
+    <summary><strong>Show Git Submodule instructions</strong> 👁</summary><p>
+
+<pre><code>$ cd your/project/root
+$ git submodule add https://github.com/pedroborges/kirby-meta-tags.git site/plugins/meta-tags
+$ git submodule update --init --recursive
+$ git commit -am &quot;Add plugin Meta Tags&quot;
+</code></pre>
+
+<p>Updating is as easy as running a few commands.</p>
+
+<pre><code>$ cd your/project/root
+$ git submodule foreach git checkout master
+$ git submodule foreach git pull
+$ git commit -am &quot;Update submodules&quot;
+$ git submodule update --init --recursive
+</code></pre>
+
+</p></details>
+
+<h2 id="basicusage">Basic Usage</h2>
+
+<p>After installing the Meta Tags plugin, you need to add one line to the <code>head</code> element on your template, or <code>header.php</code> snippet:</p>
+
+<pre><code class="diff">&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
++    &lt;?php echo $page-&gt;metaTags() ?&gt;
+</code></pre>
+
+<h3 id="default">Default</h3>
+
+<p>The plugin ships with some default meta tags enabled for your convenience:</p>
+
+<pre><code class="php">c::set('meta-tags.default', function(Page $page, Site $site) {
+    return [
+        'title' =&gt; $site-&gt;title(),
+        'meta' =&gt; [
+            'description' =&gt; $site-&gt;description()
+        ],
+        'link' =&gt; [
+            'canonical' =&gt; $page-&gt;url()
+        ],
+        'og' =&gt; [
+            'title' =&gt; $page-&gt;isHomePage()
+                ? $site-&gt;title()
+                : $page-&gt;title(),
+            'type' =&gt; 'website',
+            'site_name' =&gt; $site-&gt;title(),
+            'url' =&gt; $page-&gt;url()
+        ]
+    ];
+});
+</code></pre>
+
+<p><strong>The <code>meta-tags.default</code> option is applied to all pages on your Kirby site.</strong> Of course you can change the defaults. In order to do that, just copy this example to your <code>site/config/config.php</code> file and tweak it to fit your website needs.</p>
+
+<blockquote>
+<p>If your configuration file grows too much, you can extract it to a <code>site/config/meta-tags.php</code> file, for example, and require it from <code>site/config/config.php</code>.</p>
+</blockquote>
+
+<h3 id="templates">Templates</h3>
+
+<p>Following the flexible spirit of Kirby, you also have the option to add template specific meta tags:</p>
+
+<pre><code class="php">c::set('meta-tags.templates', function(Page $page, Site $site) {
+    return [
+        'song' =&gt; [
+            'og' =&gt; [
+                'type' =&gt; 'music.song',
+                'namespace:music' =&gt; [
+                    'duration' =&gt; $page-&gt;duration(),
+                    'album' =&gt; $page-&gt;parent()-&gt;url(),
+                    'musician' =&gt; $page-&gt;singer()-&gt;html()
+                ]
+            ]
+        ]
+    ];
+});
+</code></pre>
+
+<p>In the example above, those settings will only be applied to pages which template is <code>song</code>.</p>
+
+<p>For more information on all the <code>meta</code>, <code>link</code>, Open Graph and Twitter Card tags available, check out these resources:</p>
+
+<ul>
+<li><a href="http://gethead.info"><code>&lt;head&gt;</code> Cheat Sheet</a></li>
+<li><a href="http://ogp.me">Open Graph</a></li>
+<li><a href="https://dev.twitter.com/cards/overview">Twitter Cards</a></li>
+</ul>
+
+<h2 id="options">Options</h2>
+
+<p>Both the <code>meta-tags.default</code> and <code>meta-tags.templates</code> accept similar values:</p>
+
+<h3 id="meta-tags.default"><code>meta-tags.default</code></h3>
+
+<p>It accepts an array containing any or all of the following keys: <code>title</code>, <code>meta</code>, <code>link</code>, <code>og</code>, and <code>twitter</code>. With the exception of <code>title</code>, all other groups must return an array of key-value pairs. Check out the <a href="#tag-groups">tag groups</a> section to learn which value types are accepted by each key.</p>
+
+<pre><code class="php">c::set('meta-tags.default', [
+    'title' =&gt; 'Site Name',
+    'meta' =&gt; [ /* meta tags */ ],
+    'link' =&gt; [ /* link tags */ ],
+    'og' =&gt; [ /* Open Graph tags */ ],
+    'twitter' =&gt; [ /* Twitter Card tags */ ]
+]);
+</code></pre>
+
+<h3 id="meta-tags.templates"><code>meta-tags.templates</code></h3>
+
+<p>This option allows you to define a template specific set of meta tags. It must return an array where each key corresponds to the template name you are targeting.</p>
+
+<pre><code class="php">c::set('meta-tags.templates', [
+    'article' =&gt; [ /* tags groups */ ],
+    'about' =&gt; [ /* tags groups */ ],
+    'products' =&gt; [ /* tags groups */ ],
+]);
+</code></pre>
+
+<p>When a key matches the current page template name, it is merged and overrides any repeating properties defined on the <code>meta-tags.default</code> option so you don&#8217;t have to repeat yourself.</p>
+
+<h2 id="taggroups">Tag Groups</h2>
+
+<p>These groups accept string, closure, or array as their values. Being so flexible, the sky is the limit to what you can do with Meta Tags!</p>
+
+<h3 id="title"><code>title</code></h3>
+
+<p>Corresponds to the HTML <code>&lt;title&gt;</code> element and accepts a <code>string</code> as value.</p>
+
+<pre><code class="php">'title' =&gt; $page-&gt;isHomePage()
+    ? $site-&gt;title()
+    : $page-&gt;title(),
+</code></pre>
+
+<blockquote>
+<p>You can also pass it a <code>closure</code> that returns a <code>string</code> if the logic to generate the <code>title</code> is more complex.</p>
+</blockquote>
+
+<h3 id="meta"><code>meta</code></h3>
+
+<p>The right place to put any generic HTML <code>&lt;meta&gt;</code> elements. It takes an <code>array</code> of key-value pairs. The returned value must be a <code>string</code> or <code>closure</code>.</p>
+
+<pre><code class="php">'meta' =&gt; [
+    'description' =&gt; $site-&gt;description(),
+    'robots' =&gt; 'index,follow,noodp'
+],
+</code></pre>
+
+<details>
+    <summary><strong>Show HTML</strong> 👁</summary><p>
+
+<pre><code class="html">&lt;meta name=&quot;description&quot; content=&quot;Website description&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;index,follow,noodp&quot;&gt;
+</code></pre>
+
+</p></details>
+
+<h3 id="link"><code>link</code></h3>
+
+<p>This tag group is used to render HTML <code>&lt;link&gt;</code> elements. It takes an <code>array</code> of key-value pairs. The returned value can be a <code>string</code>, <code>array</code>, or <code>closure</code>.</p>
+
+<pre><code class="php">'link' =&gt; [
+    'stylesheet' =&gt; url('assets/css/main.css'),
+    'icon' =&gt; [
+      ['href' =&gt; url('assets/images/icons/favicon-62.png'), 'sizes' =&gt; '62x62', 'type' =&gt;'image/png'],
+      ['href' =&gt; url('assets/images/icons/favicon-192.png'), 'sizes' =&gt; '192x192', 'type' =&gt;'image/png']
+    ],
+    'canonical' =&gt; $page-&gt;url(),
+    'alternate' =&gt; function(Page $page, Site $site) {
+        $locales = [];
+
+        foreach ($site-&gt;languages() as $language) {
+            if ($language-&gt;code() == $site-&gt;language()) continue;
+
+            $locales[] = [
+                'hreflang' =&gt; $language-&gt;code(),
+                'href' =&gt; $page-&gt;url($language-&gt;code())
+            ];
+        }
+
+        return $locales;
+    }
+],
+</code></pre>
+
+<details>
+    <summary><strong>Show HTML</strong> 👁</summary><p>
+
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://pedroborg.es/assets/css/main.css&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://pedroborg.es/assets/images/icons/favicon-62.png&quot; sizes=&quot;62x62&quot; type=&quot;image/png&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;https://pedroborg.es/assets/images/icons/favicon-192.png&quot; sizes=&quot;192x192&quot; type=&quot;image/png&quot;&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;https://pedroborg.es&quot;&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;pt&quot; href=&quot;https://pt.pedroborg.es&quot;&gt;
+&lt;link rel=&quot;alternate&quot; hreflang=&quot;de&quot; href=&quot;https://de.pedroborg.es&quot;&gt;
+</code></pre>
+
+</p></details>
+
+<h3 id="og"><code>og</code></h3>
+
+<p>Where you can define <a href="http://ogp.me">Open Graph</a> <code>&lt;meta&gt;</code> elements.</p>
+
+<pre><code class="php">'og' =&gt; [
+    'title' =&gt; $page-&gt;title(),
+    'type' =&gt; 'website',
+    'site_name' =&gt; $site-&gt;title(),
+    'url' =&gt; $page-&gt;url()
+],
+</code></pre>
+
+<details>
+    <summary><strong>Show HTML</strong> 👁</summary><p>
+
+<pre><code class="html">&lt;meta property=&quot;og:title&quot; content=&quot;Passionate web developer&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;Pedro Borges&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://pedroborg.es&quot;&gt;
+</code></pre>
+
+</p></details>
+
+<p>Of course you can use Open Graph <a href="http://ogp.me/#structured">structured objects</a>. Let&#8217;s see a blog post example:</p>
+
+<pre><code class="php">c::set('meta-tags.templates', function(Page $page, Site $site) {
+    return [
+        'article' =&gt; [ // template name
+            'og' =&gt; [  // tags group name
+                'type' =&gt; 'article', // overrides the default
+                'namespace:article' =&gt; [
+                    'author' =&gt; $page-&gt;author(),
+                    'published_time' =&gt; $page-&gt;date('%F'),
+                    'modified_time' =&gt; $page-&gt;modified('%F'),
+                    'tag' =&gt; ['tech', 'web']
+                ],
+                'namespace:image' =&gt; function(Page $page) {
+                    $image = $page-&gt;cover()-&gt;toFile();
+    
+                    return [
+                        'image' =&gt; $image-&gt;url(),
+                        'height' =&gt; $image-&gt;height(),
+                        'width' =&gt; $image-&gt;width(),
+                        'type' =&gt; $image-&gt;mime()
+                    ];
+                }
+            ]
+        ]
+    ];
+});
+</code></pre>
+
+<details>
+    <summary><strong>Show HTML</strong> 👁</summary><p>
+
+<pre><code class="html"><!-- merged default definition -->
+&lt;title&gt;Pedro Borges&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Passionate web developer&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;How to make a Kirby plugin&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;Pedro Borges&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://pedroborg.es/blog/how-to-make-a-kirby-plugin&quot;&gt;
+<!-- template definition -->
+&lt;meta property=&quot;og:type&quot; content=&quot;article&quot;&gt;
+&lt;meta property=&quot;og:article:author&quot; content=&quot;Pedro Borges&quot;&gt;
+&lt;meta property=&quot;og:article:published_time&quot; content=&quot;2017-02-28&quot;&gt;
+&lt;meta property=&quot;og:article:modified_time&quot; content=&quot;2017-03-01&quot;&gt;
+&lt;meta property=&quot;og:article:tag&quot; content=&quot;tech&quot;&gt;
+&lt;meta property=&quot;og:article:tag&quot; content=&quot;web&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://pedroborg.es/content/blog/how-to-make-a-kirby-plugin/code.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta property=&quot;og:image:type&quot; content=&quot;image/jpeg&quot;&gt;
+</code></pre>
+
+</p></details>
+
+<p>Use the <code>namespace:</code> prefix for structured properties:</p>
+
+<ul>
+<li><code>author</code> inside <code>namespace:article</code> becomes <code>og:article:author</code>.</li>
+<li><code>image</code> inside <code>namespace:image</code> becomes <code>og:image</code>.</li>
+<li><code>width</code> inside <code>namespace:image</code> becomes <code>og:image:width</code>.</li>
+</ul>
+
+<blockquote>
+<p>When using Open Graph tags, you will want to add the <code>prefix</code> attribute to the <code>html</code> element as suggested on <a href="http://ogp.me/#metadata">their docs</a>: <code>&lt;html prefix=&quot;og: http://ogp.me/ns#&quot;&gt;</code></p>
+</blockquote>
+
+<h3 id="twitter"><code>twitter</code></h3>
+
+<p>This tag group works just like the previous one, but it generates <code>&lt;meta&gt;</code> tags for <a href="https://dev.twitter.com/cards/overview">Twitter Cards</a> instead.</p>
+
+<pre><code class="php">'twitter' =&gt; [
+    'card' =&gt; 'summary',
+    'site' =&gt; $site-&gt;twitter(),
+    'title' =&gt; $page-&gt;title(),
+    'namespace:image' =&gt; function(Page $page) {
+        $image = $page-&gt;cover()-&gt;toFile();
+
+        return [
+            'image' =&gt; $image-&gt;url(),
+            'alt' =&gt; $image-&gt;alt()
+        ];
+    }
+]
+</code></pre>
+
+<details>
+    <summary><strong>Show HTML</strong> 👁</summary><p>
+
+<pre><code class="html">&lt;meta name=&quot;twitter:card&quot; content=&quot;summary&quot;&gt;
+&lt;meta name=&quot;twitter:site&quot; content=&quot;@pedroborg_es&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;My blog post title&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;https://pedroborg.es/content/blog/my-article/cover.jpg&quot;&gt;
+&lt;meta name=&quot;twitter:image:alt&quot; content=&quot;Article cover image&quot;&gt;
+</code></pre>
+
+</p></details>
+
+<h2 id="changelog">Change Log</h2>
+
+<p>All notable changes to this project will be documented at: <a href="https://github.com/pedroborges/kirby-meta-tags/blob/master/changelog.md">https://github.com/pedroborges/kirby-meta-tags/blob/master/changelog.md</a></p>
+
+<h2 id="license">License</h2>
+
+<p>Meta Tags plugin is open-sourced software licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+
+<p>Copyright © 2017 Pedro Borges <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#111;&#105;&#64;&#x70;&#101;&#x64;&#114;&#111;&#98;&#111;&#x72;&#x67;&#x2e;&#x65;&#x73;">&#111;&#x69;&#x40;&#x70;&#x65;&#x64;&#x72;&#111;&#98;&#x6f;&#x72;&#103;&#46;&#x65;&#115;</a></p>
+
+</body>
+</html>
+

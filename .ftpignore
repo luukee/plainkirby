@@ -1,0 +1,9 @@
+.ftpconfig
+.ftpconfig.cson
+.ftpignore
+id_rsa
+.DS_Store
+.git
+.htaccess
+config.codekit3
+license.md

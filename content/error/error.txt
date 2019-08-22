@@ -1,1 +1,13 @@
 Title: Oops
+
+----
+
+Social: 
+
+- 
+  icon: Back
+  hyperlink: http://lukecarlhartman.com/
+
+----
+
+Text: Sorry, wrong page.

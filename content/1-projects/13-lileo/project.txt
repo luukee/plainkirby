@@ -1,0 +1,31 @@
+Title: Lileo
+
+----
+
+Date: 
+
+----
+
+Coverimage: luke-carl-hartman-web-development-project-lileo-background.jpg
+
+----
+
+Text: 
+
+Lileo startup site I developed while at Clever Creative Agency.
+
+WordPress WooCommerce rent and purchase eCommerce site.
+
+PHP, HTML, CSS, (link: https://foundation.zurb.com/ text: Zurb Foundation), and (link: https://www.tychesoftwares.com/ text: Tyche Software) were the technologies I used to put the project together.
+
+I also gained some great insights from the great people at (link: https://premium.wpmudev.org/ text: WPMUDEV).
+
+**(link: https://www.lileo.jp/ text: Visit the Site)**
+
+----
+
+Description: Lileo startup site I developed while at Clever Creative Agency. WordPress WooCommerce rent and purchase eCommerce site. PHP, HTML, CSS, Zurb Foundation), and Tyche Software were the technologies I used to put the project together.
+
+----
+
+Keywords: lileo, wpmudev, web development, startup, html, css, php

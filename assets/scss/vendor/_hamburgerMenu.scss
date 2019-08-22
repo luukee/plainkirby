@@ -14,7 +14,7 @@
 #menuToggle {
   display: block;
   position: relative;
-  top: 5px;
+  top: 1px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -47,7 +47,7 @@
     height: 2px;
     margin-bottom: 4px;
     position: relative;
-    background: $white;
+    background: $black;
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;
@@ -58,21 +58,29 @@
         background: $black;
     }
 }
-    #blog-section,
-    #article-page {
-        // hamburger patties
-        #menuToggle span {
-            @media print, screen and (min-width: 30em) {
-                background: $black;
-            }
+
+// pages with a white background
+#project-page {
+    // hamburger patties
+    #menuToggle span {
+        @media print, screen and (min-width: 30em) {
+            // background: $white;
         }
-        // main header title
-        .title a {
-            @media print, screen and (min-width: 30em) {
-                color: $black;
-            }
+    }
+    #menuToggle input {
+        border: 1px solid $black;
+        border-top-color: $black;
+        border-right-color: $black;
+        border-bottom-color: $black;
+        border-left-color: $black;
+    }
+    // main header title
+    .title a {
+        @media print, screen and (min-width: 30em) {
+            // color: $white;
         }
-    } // BLOG END
+    }
+} // BLOG END
 
 #menuToggle span:first-child
 {

@@ -1,0 +1,55 @@
+Title: Appreciation
+
+----
+
+Coverimage: luke-carl-hartman-appreciation-for-those-that-helped-me-thank-you.jpg
+
+----
+
+Date: 2018-06-14
+
+----
+
+Text: 
+
+I've wanted to thank all the wonderful developers that have dedicated their time (which I know they're having fun) to create snippets, plugins, frameworks, or just excellent (link: https://codepen.io/ text: Codepens)!
+
+I never really had the chance till now (working freelance and stuff) to give them the appreciation the deserve. Granted this will be an ongoing blog post for all you readers out there 😉! 
+
+No kiddin.
+
+## Treehouse
+(image: i-appreciate-treehouse-learning-luke-carl-hartman.jpg link:https://teamtreehouse.com/ target:_blank)
+I have been completing the Front End Development track on Treehouse for the past year and I truly appreciate not only the great content but also the great interface and teachers. I highly recommend it.
+$25/month, jump on a track and stick with it. Do it every day. Don't ever miss a day (I learned that for sure).
+
+## Lozad Lazy Load
+(image: thank-you-lozad-banner.jpg link: https://github.com/ApoorvSaxena/lozad.js )
+
+## Favicon Generator
+Want to create your site (link: https://en.wikipedia.org/wiki/Favicon text: favicon's target:_blank)? Dan's Tools has always been my go-to. Thanks Dan. (link: https://www.favicon-generator.org/editor/ text: Here's what it can do for you. target:_blank) Check it out!
+(image: thank-you-dans-tools-favicon-generator.jpg link: https://www.favicon-generator.org/)
+
+## Spiral Banner Thingy by Carpenumidium
+This is what I use on my homepage to show what I have experience in. Thanks (link: https://codepen.io/carpenumidium/ text: Carpenumidium target:_blank) for creating a great little SCSS animation. You are a scholar. I found this animation on the (link: https://codemyui.com/ text: Code My UI) (link: https://codemyui.com/tag/text-animation/ text: Text Animation Design Inspiration target:_blank) page.
+(image: carpenumidium-codepen-css-animation-luke-carl-hartman-1.jpg link: https://codemyui.com/tag/text-animation/)
+
+## Tinypng
+(image: luke-carl-hartman-giving-appreciation-to-tinypng.png link: https://tinypng.com/ target:_blank)
+Love this Panda. Super easy and quick to downsize png's and jpg's.
+
+First and foremost!  
+
+## (link: https://www.youtube.com/watch?v=sX5g0kidk3Y text: Apple Computers)
+
+<div class="video-responsive">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sX5g0kidk3Y?controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+----
+
+Description: I've wanted to thank all the wonderful developers that have dedicated their time (which I know they're having fun) to create snippets, plugins, frameworks, or just plain codepens!
+
+----
+
+Keywords: frameworks, plugins, snippets, thank you, apple computers,

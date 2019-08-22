@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="phpmetatagsreleasehttps:img.shields.iogithubreleasepedroborgesmeta-tags.svghttps:github.compedroborgesmeta-tagsreleasesissueshttps:img.shields.iogithubissuespedroborgesmeta-tags.svghttps:github.compedroborgesmeta-tagsissues">PHP Meta Tags <a href="https://github.com/pedroborges/meta-tags/releases"><img src="https://img.shields.io/github/release/pedroborges/meta-tags.svg" alt="Release" /></a> <a href="https://github.com/pedroborges/meta-tags/issues"><img src="https://img.shields.io/github/issues/pedroborges/meta-tags.svg" alt="Issues" /></a></h1>
+
+<p>HTML meta tags generator for PHP. Supports <a href="http://ogp.me">Open Graph</a> and <a href="https://dev.twitter.com/cards/overview">Twitter Cards</a> out of the box.</p>
+
+<h2 id="installation">Installation</h2>
+
+<pre><code>composer require pedroborges/meta-tags
+</code></pre>
+
+<h2 id="basicusage">Basic Usage</h2>
+
+<p>Create a new <code>MetaTags</code> instance then you are ready to start adding meta tags:</p>
+
+<pre><code class="php">use PedroBorges\MetaTags\MetaTags;
+
+$tags = new MetaTags;
+
+// &lt;title&gt;My Awesome Site&lt;/title&gt;
+$tags-&gt;title('My Awesome Site');
+
+// &lt;meta name=&quot;description&quot; content=&quot;My site description&quot;&gt;
+$tags-&gt;meta('description', 'My site description');
+
+// &lt;link rel=&quot;canonical&quot; href=&quot;https://pedroborg.es&quot;&gt;
+// &lt;link rel=&quot;alternate&quot; hreflang=&quot;en-us&quot; href=&quot;https://en.pedroborg.es&quot;&gt;
+$tags-&gt;link('canonical', 'https://pedroborg.es');
+$tags-&gt;link('alternate', [
+'hreflang' =&gt; 'en',
+'href' =&gt; 'https://en.pedroborg.es'
+]);
+
+// &lt;meta property=&quot;og:title&quot; content=&quot;The Title&quot;&gt;
+// &lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+// &lt;meta property=&quot;og:url&quot; content=&quot;https://pedroborg.es&quot;&gt;
+// &lt;meta property=&quot;og:image&quot; content=&quot;https://pedroborg.es/cover.jpg&quot;&gt;
+$tags-&gt;head-&gt;og('title', 'The title');
+$tags-&gt;head-&gt;og('type', 'website');
+$tags-&gt;head-&gt;og('url', 'https://pedroborg.es');
+$tags-&gt;head-&gt;og('image', 'https://pedroborg.es/cover.jpg');
+
+// &lt;meta name=&quot;twitter:card&quot; content=&quot;summary&quot;&gt;
+// &lt;meta name=&quot;twitter:site&quot; content=&quot;@pedroborg_es&quot;&gt;
+$tags-&gt;head-&gt;twitter('card', 'summary');
+$tags-&gt;head-&gt;twitter('site', '@pedroborg_es');
+</code></pre>
+
+<p>When you are ready to output them, use the <code>render</code> method inside your template <code>&lt;head&gt;</code> element:</p>
+
+<pre><code class="php">&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;?php echo $tags-&gt;render() ?&gt;
+</code></pre>
+
+<p>By default Meta Tag will indent the tags with 4 spaces and use the following order:</p>
+
+<ol>
+<li><code>&lt;title&gt;</code></li>
+<li><code>&lt;meta&gt;</code> (General)</li>
+<li><code>&lt;meta property=&quot;og:*&quot;&gt;</code> (Open Graph)</li>
+<li><code>&lt;meta name=&quot;twitter:*&quot;&gt;</code> (Twitter Cards)</li>
+<li><code>&lt;link&gt;</code></li>
+</ol>
+
+<p>You can change that when instantiating the <code>MetaTag</code> class:</p>
+
+<pre><code class="php">use PedroBorges\MetaTags\MetaTags;
+
+$tags = new MetaTags(&quot;\t&quot;, ['meta', 'title', 'link', 'og', 'twitter']);
+</code></pre>
+
+<h2 id="changelog">Change Log</h2>
+
+<p>All notable changes to this project will be documented at: <a href="https://github.com/pedroborges/meta-tags/blob/master/changelog.md">https://github.com/pedroborges/meta-tags/blob/master/changelog.md</a></p>
+
+<h2 id="license">License</h2>
+
+<p>Meta Tags is open-sourced software licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+
+<p>Copyright © 2017 Pedro Borges <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#111;&#x69;&#x40;&#x70;&#x65;&#x64;&#x72;&#x6f;&#98;&#111;&#x72;&#103;&#x2e;&#101;&#x73;">&#111;&#x69;&#64;&#112;&#x65;&#100;&#x72;&#x6f;&#98;&#111;&#114;&#103;&#46;&#x65;&#x73;</a></p>
+
+</body>
+</html>
+

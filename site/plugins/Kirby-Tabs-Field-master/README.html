@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="tabsfieldv1.6">Tabs Field v1.6</h1>
+
+<h3 id="tabbedfieldsforkirbycms">Tabbed Fields for Kirby CMS</h3>
+
+<figure>
+<img src="/preview.gif" alt="Preview" />
+<figcaption>Preview</figcaption>
+</figure>
+
+<p>The tab field type is designed specifically for use within the fields.</p>
+
+<figure>
+<img src="/tabswitch.gif" alt="Error" />
+<figcaption>Error</figcaption>
+</figure>
+
+<p>If there&#8217;s an error in another tab, like an empty but required field, the tab will be automatically switched.</p>
+
+<h2 id="installationguide">Installation guide</h2>
+
+<h3 id="1.withkirbycli">1. With Kirby CLI</h3>
+
+<pre><code class="bash">$ cd /your/kirby/installation
+$ kirby plugin:install afbora/Kirby-Tabs-Field
+</code></pre>
+
+<h3 id="2.withgit">2. With Git</h3>
+
+<h6 id="2.1.cloning">2.1. Cloning</h6>
+
+<pre><code class="bash">$ cd /your/kirby/instalation/site/fields
+$ git clone https://github.com/afbora/Kirby-Tabs-Field.git tabs
+</code></pre>
+
+<h6 id="2.2.submodule">2.2. Submodule</h6>
+
+<pre><code class="bash">$ cd /your/kirby/instalation/
+$ git submodule add https://github.com/afbora/Kirby-Tabs-Field site/fields/tabs
+</code></pre>
+
+<h3 id="3.tarball">3. Tarball</h3>
+
+<p>Simply <a href="https://github.com/afbora/Kirby-Tabs-Field/archive/master.zip">download this repository</a> and extract it into <code>/your-kirby-installation/site/plugins/</code>.</p>
+
+<h2 id="blueprintexample">Blueprint Example</h2>
+
+<pre><code class="YAML">title: Project
+pages: true
+files: true
+fields:
+  tab1:
+    label: General
+    type:  tabs
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
+  tab2:
+    label: Details
+    type:  tabs
+  technologies:
+    label: Technologies
+    type:  textarea
+  link:
+    label: Link
+    type:  url
+</code></pre>
+
+</body>
+</html>
+

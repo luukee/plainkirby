@@ -1,0 +1,1 @@
+!function($){$.fn.filedrop=function(r){if("destroy"==r)return this.drop("destroy");if(!$.support.fileReader)return!1;var e={drop:function(r){},files:function(r){}},r=$.extend({},e,r),i=r.drop;r.drop=function(e){i.apply(this,[e]),e.originalEvent.dataTransfer&&e.originalEvent.dataTransfer.files&&$.fileReader(e.originalEvent.dataTransfer.files,r.files)},this.drop(r)}}(jQuery);

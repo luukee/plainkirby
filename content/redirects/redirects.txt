@@ -1,0 +1,11 @@
+Title: Redirects
+
+----
+
+Redirects: 
+
+- 
+  old: /blog/blog-1
+  new: /blog/appreciation
+  external: "0"
+  code: "301"

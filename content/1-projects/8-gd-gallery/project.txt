@@ -1,0 +1,33 @@
+Title: GD.gallery
+
+----
+
+Date: 
+
+----
+
+Text: 
+
+Web development project from Los Angeles fine artist Glenn Deneve ak (link: https://gd.gallery/ text: GD.gallery target:_blank). Site built on (link: https://www.squarespace.com/ text: Squarespace target: _blank).
+
+CSS, HTML & Javascript/jQuery
+
+**(link: https://gd.gallery/ text: Visit the Site target: _blank)**
+
+<div class='embed-container'><iframe src="https://www.youtube.com/embed/QbGotC1Oi9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+----
+
+Instaurl: https://www.instagram.com/keetymoor/
+
+----
+
+Coverimage: luke-carl-hartman-web-development-client-glenn-deneve-ak-gd-gallery-gallery-interior-photo.jpg
+
+----
+
+Description: Web development project from Los Angeles fine artist Glenn Deneve ak GD.gallery. Site built on Squarespace.
+
+----
+
+Keywords: 

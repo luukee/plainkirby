@@ -1,0 +1,32 @@
+Title: Crankshaft Studio
+
+----
+
+Date: 
+
+----
+
+Coverimage: orionthemes-placeholder-image-copy.png
+
+----
+
+Text: 
+
+Freelance web development project with Kevin the owner and founder of Crankshaft Studio.
+
+Built on Squarespace with default modules, CSS and  jQuery. 
+
+SEO image and meta optimization, Google Chrome audits, Screaming Frog and Google Console.
+
+**(link: http://www.crankshaftstudio.com/home/ text: Visit the Site)**
+
+----
+
+Description: 
+
+A web development project with Kevin the owner and founder of Crankshaft Studio.
+Built on Squarespace with default modules,
+
+----
+
+Keywords: Crankshaft Studios, jQuery, CSS, Squarespace, SEO

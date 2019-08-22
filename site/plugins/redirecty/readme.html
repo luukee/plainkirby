@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<p><a href="https://github.com/ivinteractive/kirbycms-redirects/releases"><img src="https://img.shields.io/github/release/ivinteractive/kirbycms-redirects.svg" alt="Release" /></a>
+<a href="https://raw.githubusercontent.com/ivinteractive/kirbycms-redirects/master/license.md"><img src="https://img.shields.io/github/license/ivinteractive/kirbycms-redirects.svg" alt="License" /></a></p>
+
+<h1 id="redirecty">Redirecty</h1>
+
+<p>When updating a non-CMS site to Kirby, we usually spend a lot of time updating old links to the pages' new URIs. We can add routing for old URIs that match patterns, but some links won&#8217;t follow those patterns. Redirecty does the following:</p>
+
+<ul>
+<li>301 redirects for listed URIs</li>
+<li>Content updates to search for and replace old links</li>
+<li>CSV/JSON import/export of the redirects list</li>
+</ul>
+
+<p>The plugin requires Kirby 2.3.0+.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Download the zip and extract the files to /site/plugins/redirecty, or if you&#8217;re using it as a submodule run this from your site root:</p>
+
+<pre><code>git submodule add https://github.com/ivinteractive/kirbycms-redirects ./site/plugins/redirecty
+</code></pre>
+
+<h2 id="addingyourredirects">Adding your redirects</h2>
+
+<p>The plugin includes and registers a redirects blueprint if no alternate blueprint is provided (see <code>redirecty-template</code> below). Create a redirects page using this template and add your redirects (oldbad_uri.html =&gt; wonderful-new-kirby-uri). Call the <code>redirecty()</code> function at the top of your header snippet, and you&#8217;re all set! Test your redirects out to make sure everything&#8217;s set &#8211; the redirects should show up with a 301 in the Developer tools Network tab.</p>
+
+<figure>
+<img src="https://raw.githubusercontent.com/ivinteractive/kirbycms-redirects/dev/sample.png" alt="Redirects panel screenshot" />
+<figcaption>Redirects panel screenshot</figcaption>
+</figure>
+
+<h2 id="linkupdating">Link updating</h2>
+
+<p>301 redirects are nice, but wouldn&#8217;t it be great to get the actual links within your content updated, too? For this, you&#8217;ll need to set up a couple of config variables, and then go to <a href="yourdomain.com/redirecty">http://yourdomain.com/redirecty</a>.</p>
+
+<p>We recommend using dry runs at first and reviewing the update reports to make sure that Redirecty isn&#8217;t operating overzealously &#8211; if old URIs that are getting updated are single words, please be aware that those words will be updated <em>everywhere in your content!</em></p>
+
+<h3 id="options">Options</h3>
+
+<h5 id="redirecty">redirecty</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>false</code></p>
+
+<p>Turns the link updater URI on or off. By default, the link updater will just return a 404. <strong>Required for updating links and CSV/JSON exports.</strong></p>
+
+<h5 id="redirecty-dryrun">redirecty-dryrun</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>true</code></p>
+
+<p>Whether or not the plugin should actually update the pages when this is run. Default is set to give you a preview before going ahead with the changes. <strong>Required for updating links.</strong></p>
+
+<h3 id="additionaloptions">Additional Options</h3>
+
+<p>These won&#8217;t be necessary to change from the defaults in most cases, but they&#8217;re available in case that&#8217;s necessary:</p>
+
+<h4 id="linkupdatingoptions">Link updating options</h4>
+
+<h5 id="redirecty-uri">redirecty-uri</h5>
+
+<p>Type: <code>String</code> Default: <code>redirecty</code></p>
+
+<p>The URI where the link updater will get run from.</p>
+
+<h5 id="redirecty-noauth">redirecty-noauth</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>true</code></p>
+
+<p>By default, the redirecty URI only returns a result if you&#8217;re logged in and have panel access. This could most likely be set to false if you&#8217;re in a dev environment and you can trust everyone with access to the site, but otherwise, it&#8217;s better to make sure you&#8217;re the only one with access to the link updating functionality. <strong>Note:</strong> The same auth/no-auth logic applies to the CSV/JSON export functionality.</p>
+
+<h5 id="redirects-list-uri">redirects-list-uri</h5>
+
+<p>Type: <code>String</code> Default: <code>redirects</code></p>
+
+<p>The URI for the source of all your redirects (using the redirects template). <strong>Note:</strong> If you&#8217;re not using the default URI, this needs to get set for both the link updater <em>and</em> the redirection to work.</p>
+
+<h5 id="redirecty-case">redirecty-case</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>true</code></p>
+
+<p>Case-sensitivity. Defaults to case-sensitive to avoid unintended changes. If you&#8217;re noticing that the link updater is reporting fewer replacements than pages (e.g. &#8216;Redirecty would have made
+0 replacements in 1 page.&#8217;), try setting this to false. <strong>Note:</strong> This is also used in 301 redirects.</p>
+
+<h4 id="redirectionoptions">Redirection options</h4>
+
+<h5 id="redirecty-home">redirecty-home</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>true</code></p>
+
+<p>Whether the homepage&#8217;s URL (i.e. &#8216;/home&#8217;) should have a 301 redirect to the base URL.</p>
+
+<h5 id="redirecty-self">redirecty-self</h5>
+
+<p>Type: <code>String</code> Default: <code>Homepage</code></p>
+
+<p>Where the redirects list should redirect to. Set to whatever URI the redirects list page should redirect to, or set to false to not have it redirect at all. Added so you don&#8217;t have to remember to redirect the list itself.</p>
+
+<h5 id="redirecty-subfolder">redirecty-subfolder</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>false</code></p>
+
+<p>Whether to include the base path removal in the redirect matching. Change this to true if your site exists in a subfolder.</p>
+
+<h5 id="redirecty-multi">redirecty-multi</h5>
+
+<p>Type: <code>Integer</code> Default: <code>302</code></p>
+
+<p>The type of redirect used for versions of pages that are not the default language on a multilanguage setup. The default language will still get a 301 redirect.</p>
+
+<h4 id="importoptions">Import options</h4>
+
+<p>Upload a CSV or JSON file to the redirects list page in the Kirby panel &#8211; the file will automatically be parsed and the page will be updated.</p>
+
+<h5 id="redirecty-import">redirecty-import</h5>
+
+<p>Type: <code>String</code> Default: <code>append</code></p>
+
+<p>How CSV/JSON imports should modify the redirects list. Default just appends to the existing list, change to <code>replace</code> to have the imported redirects replace the current list.</p>
+
+<h5 id="redirecty-import-save">redirecty-import-save</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>false</code></p>
+
+<p>By default, CSV/JSON files used for imports get deleted immediately afterwards. Set this to true if you want them to stick around.</p>
+
+<h5 id="redirecty-csv">redirecty-csv</h5>
+
+<p>Type: <code>String</code> Default: <code>redirecty-csv</code></p>
+
+<p>The URI where you can get CSV exports of the redirects list.</p>
+
+<h5 id="redirecty-json">redirecty-json</h5>
+
+<p>Type: <code>String</code> Default: <code>redirecty-json</code></p>
+
+<p>The URI where you can get JSON exports of the redirects list.</p>
+
+<h5 id="redirecty-template">redirecty-template</h5>
+
+<p>Type: <code>String</code> Default: <code>redirects</code></p>
+
+<p>The name of the template you&#8217;re using for the redirects list. This is used as a check to make sure that the CSV/JSON import hook only runs on your redirects page (parsing the file, updating the page, and deleting the uploaded file), as well as a check on whether the blueprint included with the plugin should be registered. If no alternate blueprint is set in the config file, the default redirects template will be registerd.</p>
+
+<h5 id="redirecty-widget">redirecty-widget</h5>
+
+<p>Type: <code>Boolean</code> Default: <code>true</code></p>
+
+<p>Whether or not to show the dashboard widget.</p>
+
+<h5 id="redirecty-widget-count">redirecty-widget-count</h5>
+
+<p>Type: <code>Integer</code> Default: <code>5</code></p>
+
+<p>The maximum amount of redirects to show in the dashboard widget. If set to 0, it hides the redirects preview and CSV/JSON download links in the widget.</p>
+
+</body>
+</html>
+

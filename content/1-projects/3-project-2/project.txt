@@ -1,0 +1,29 @@
+Title: Angel City Designs Website
+
+----
+
+Description: Luke Carl Hartman web development project with Angel City Designs.
+
+----
+
+Keywords: web development, wordpress, web design,
+
+----
+
+Year: 2013
+
+----
+
+Text: While at the wonderful agency Clever Creative I had the opportunity to develop Angel City Design's WordPress website.
+
+----
+
+Date: 02/18/1994
+
+----
+
+Cover-image: keet-rainbows-2.jpg
+
+----
+
+Coverimage: angel-city-designs-web-design-project-1-33-18.jpg

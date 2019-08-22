@@ -1,0 +1,37 @@
+Title: Alma Mater
+
+----
+
+Date: 
+
+----
+
+Coverimage: luke-carl-hartman-web-development-project-alma-mater-tutoring-services.jpg
+
+----
+
+Text: 
+
+Spring 2015 I was asked by my friend (link: http://www.kimberlyperl.com/ text: Kimmie target: _blank) to take on a web project at Clever Creative. That web project turned out to be the Alma Mater website.
+
+I was fresh out of college and excited to get into designing some websites. 
+
+The site was built on WordPress with (link: https://themeforest.net/item/hershel-flexible-multipurpose-wordpress-theme/12850028 text: Hershel target: _blank) theme created by (link: https://gt3themes.com/ text: GT3 Themes target: _blank). 
+
+As well as custom HTML and CSS.
+
+**(link: https://www.almamater.net/ text: Visit the Site target: _blank)**
+
+This site was awarded the 2017 American Web Design Award.
+
+(image: luke-carl-hartman-graphic-design-usa-2017-american-web-design-awards-winner.png)
+
+(link: https://issuu.com/gdusa/docs/gdusajune2016new/72 text: See the GDUSA Publication target:_blank) or the (link: http://ebook-dl.com/magazine/graphicdesignusa-0620169158.pdf text: PDF target:_blank)
+
+----
+
+Description: WordPress web development project with Alma Mater Educational Services. HTML, CSS and Hershel GT3 Theme. Revolution Slider, Visual Composer,
+
+----
+
+Keywords: web development, web design, HTML, CSS

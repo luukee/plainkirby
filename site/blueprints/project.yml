@@ -3,11 +3,11 @@ title: Project
 files:
     sortable: true
 
-pages: false
+pages: true
 
 options:
-    template: false
-    url: false
+    template: true
+    url: true
 
 fields:
     title:
@@ -27,14 +27,15 @@ fields:
     text:
         label: Text
         type: textarea
+        help: Wrap your YouTube embed code in a div with the class="video-responsive" to post a responsive video.<br>Links open in a new tab, add "target:_blank" inside ()'s. Embed content go here embedresponsively.com.
 
     description:
         label: SEO Description
         type: textarea
-        help: A SEO/meta description is a snippet of up to 320 characters, that summarizes your page content for search engines. This will _not_ show on the frontend, it is only for the search bots!
+        help: A SEO/meta description is a snippet of up to 165 characters, that summarizes your page content for search engines. This will _not_ show on the frontend, it is only for the search bots!
         width: 1/2
         validate:
-            maxLength: 320
+            maxLength: 165
 
     keywords:
         label: SEO Keywords

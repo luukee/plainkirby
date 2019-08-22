@@ -1,0 +1,12 @@
+#redirecty-widget td {
+  padding: 0.5em; }
+  #redirecty-widget td span {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+#redirecty-widget p {
+  margin: 0.75em 0 0.75em; }
+
+#redirecty-widget .btn {
+  margin-right: 0.75em; }

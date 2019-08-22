@@ -1,0 +1,79 @@
+Title: Email Dev
+
+----
+
+Date: 
+
+----
+
+Coverimage: email-development-main-image-luke-carl-hartman.jpg
+
+----
+
+Text: 
+
+Here are links to the various email campaigns I developed with either HTML (link: https://foundation.zurb.com/emails.html text: Foundation Emails target:_blank), (link: https://mailchimp.com/ text: Mailchimp target:_blank), (link: https://www.constantcontact.com/index.jsp text: Constant Contact target:_blank) or (link: https://www.agencyaccess.com/ text: Agency Access target:_blank). 
+
+There are many more, (link: http://lukecarlhartman.com/about/#contact text: contact me) if you'd like to see the full archive.
+
+## Fluid Frame
+
+### (link: https://us16.campaign-archive.com/?e=&u=06f6d953cfa46f08a607f768b&id=993596a08a text: Motion : Photo target:_blank) 
+#### 09/07/17
+<div class='embed-container'><iframe src='https://us16.campaign-archive.com/?e=&u=06f6d953cfa46f08a607f768b&id=993596a08a' class="lozad"></iframe></div>
+
+## Bruce Lurie Gallery
+
+Some emails for Lurie Gallery are mainly images we resorted to from the postcard design (link: https://plus.google.com/u/1/collection/0WJhY text: I created target:_blank) ((link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=761e1ca2c0 text: prime example target:_blank)). 
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=86e4bb33ba text: 2016 Palm Springs Fine Art Fair target:_blank)  
+#### 02/14/16
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=86e4bb33ba' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=75f38a6faf text: 2016 LA Art Show target:_blank)
+#### 01/24/16
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=75f38a6faf ' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=fd00faf58e text: Gary John Show target:_blank)
+#### 10/17/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=fd00faf58e ' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=081f2632c7 text: Louise Marler Opening target:_blank)
+#### 10/10/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=081f2632c7' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=b6012abb88 text: Gary John Solo Show target:_blank)
+#### 10/10/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=b6012abb88' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=cf4f4c67a9 text: The Art of Film Finance Exhibit target:_blank)
+#### 11/08/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=cf4f4c67a9' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=954b8b60c6 text: Momentum Transferred Exhibit target:_blank)
+#### 11/06/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=954b8b60c6' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=f7d75195d3 text: '15 Red Dot Art Fair  target:_blank)
+#### 11/29/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=f7d75195d3' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=e319f53825 text: Brian Liebenthal & LA Marler Exhibition target:_blank)
+#### 09/18/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=e319f53825' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=ba5fa985e2 text: Bruce Lurie Gallery Hot Summer Art Walk target:_blank)
+#### 07/18/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=ba5fa985e2' class="lozad"></iframe></div>
+
+### (link: https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=a69882de08 text: Art by Ziba Exhibition target:_blank)
+#### 05/15/15
+<div class='embed-container'><iframe src='https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=a69882de08 ' class="lozad"></iframe></div>
+
+----
+
+Description: links to the various email campaigns I developed with either HTML Foundation Emails, Mailchimp, Constant Contact or Agency Access.
+
+----
+
+Keywords: 

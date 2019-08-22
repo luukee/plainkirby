@@ -1,14 +1,14 @@
 
-<ul class="small-4 medium-4 social">
-	<?php 
-	// create a variable for each new social row
-	$rows = $site->social()->toStructure();
+<ul class="small-2 medium-4 social">
+	<?php
+    // create a variable for each new social row
+    $rows = $site->social()->toStructure();
 
-	// make sure some social icons have been added
-	if(count($rows)):
+    // make sure some social icons have been added
+    if (count($rows)):
 
-		// loop through each
-		foreach($rows as $row): ?>
+        // loop through each
+        foreach ($rows as $row): ?>
 
 			<li>
 				<a href="<?= $row->hyperlink()->html() ?>" target="_blank">
@@ -17,6 +17,5 @@
 			</li>
 
 		<?php endforeach ?>
-
 	<?php endif ?>
 </ul>

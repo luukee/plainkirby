@@ -1,0 +1,39 @@
+Title: Angel City
+
+----
+
+Description: Experiential group Angel City Designs WordPress website developed by Luke Carl Hartman.
+
+----
+
+Keywords: web development, revolution slider, wordpress, phoenix theme, web design, html, css
+
+----
+
+Year: 2013
+
+----
+
+Text: 
+
+Los Angeles experiential group Angel City Designs WordPress website I developed mid 2015 with the help of (link: http://www.srbookdesign.com/ text: Scott Rivera target: _blank) the UX designer.
+
+HTML, CSS & MySQL
+
+### **(link: http://angelcitydesigns.com/ text: Visit the Site target: _blank)**  
+
+<div class="video-responsive">
+<iframe src='https://www.youtube.com/embed/c6QlvW_xMDM' frameborder='0' allowfullscreen></iframe>
+</div>
+
+----
+
+Date: 
+
+----
+
+Cover-image: keet-rainbows-2.jpg
+
+----
+
+Coverimage: luke-carl-hartman-web-development-project-angel-city-designs.jpg

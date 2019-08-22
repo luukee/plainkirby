@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="changelog">Change Log</h1>
+
+<p>All notable changes to this project will be documented in this file.</p>
+
+<h2 id="1.0.0-2017-11-15">[1.0.0] - 2017&#8211;11&#8211;15</h2>
+
+<p>The previous version has been stable enough and no issue has been reported in 8 months :smiley:</p>
+
+<p>I finally got time to make some improvements and update the documentation so it&#8217;s time to release <a href="https://github.com/pedroborges/kirby-meta-tags/tree/v1.0.0">v1.0.0</a>.</p>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li><p>Options <code>meta-tags.default</code> and <code>meta-tags.templates</code> can now return a <code>closure</code> which receives <code>$page</code> and <code>$site</code> as arguments:</p>
+
+<pre><code class="php">c::set('meta-tags.default', function(Page \(page, Site \)site) {
+    return [
+        'title' =&gt; \(site-&gt;title(),
+        'meta' =&gt; [
+            'description' =&gt; \)site-&gt;description()
+        ],
+        'link' =&gt; [
+            'canonical' =&gt; $page-&gt;url()
+        ],
+        'og' =&gt; [
+            'title' =&gt; \(page-&gt;isHomePage()
+                ? \)site-&gt;title()
+                : \(page-&gt;title(),
+            'type' =&gt; 'website',
+            'site_name' =&gt; \)site-&gt;title(),
+            'url' =&gt; $page-&gt;url()
+        ]
+    ];
+});
+</code></pre></li>
+<li><p>Closures in other places now receive <code>$site</code> and second argument as well:</p>
+
+<pre><code class="php">'link' =&gt; [
+    'canonical' =&gt; \(page-&gt;url(),
+    'alternate' =&gt; function(Page \)page, Site \(site) {
+        \)locales = [];
+
+        foreach (\(site-&gt;languages() as \)language) {
+            if ($language-&gt;isDefault()) continue;
+
+            \(locales[] = [
+                'hreflang' =&gt; \)language-&gt;code(),
+                'href' =&gt; \(page-&gt;url(\)language-&gt;code())
+            ];
+        }
+
+        return $locales;
+    }
+],
+</code></pre></li>
+</ul>
+
+<p>Besides offering a better workflow, these changes also help avoid an issue where <code>site()</code> can&#8217;t be called outside a closure from the config file in multi-language websites, as reported at getkirby/kirby#606.</p>
+
+<h2 id="1.0.0-beta-2017-03-01">[1.0.0-beta] - 2017&#8211;03&#8211;01</h2>
+
+<p>The plugin has gone under heavy refactor and is no longer focused only on Open Graph. For that reason the name has changed from Open Graph to Meta Tags.</p>
+
+<p>Although this is a beta release, it is considered stable and should cover most use cases, even complex ones.</p>
+
+<h2 id="1.0.0-alpha-2017-02-26">[1.0.0-alpha] - 2017&#8211;02&#8211;26</h2>
+
+<h3 id="initialrelease">Initial release</h3>
+
+</body>
+</html>
+

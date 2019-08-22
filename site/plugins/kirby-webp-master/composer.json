@@ -1,0 +1,16 @@
+{
+  "name": "s1syphos/kirby-webp",
+  "description": "WebP generation for Kirby",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Folkers",
+      "homepage": "https://twobrain.io",
+      "role": "Project Author"
+    }
+  ],
+  "require": {
+    "rosell-dk/webp-convert": "dev-patch-1"
+  }
+}

@@ -1,0 +1,1 @@
+!function($){$.support.fileReader=!!(window.File&&window.FileList&&window.FileReader),$.fileReader=function(e,r){if(!$.support.fileReader)return!1;for(var n=[],i=function(i){return function(){n.push(i),n.length===e.length&&r(n)}},o=0;o<e.length;o++){var t=new FileReader;t.onload=i(e[o]),t.readAsArrayBuffer(e[o])}}}(jQuery);

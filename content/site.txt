@@ -1,4 +1,4 @@
-Title: Luukee
+Title: Web Dev with Luke
 
 ----
 
@@ -22,7 +22,14 @@ Social:
 
 - 
   icon: instagram
-  hyperlink: https://www.instagram.com/keetymoor/
+  hyperlink: https://www.instagram.com/lukekarl/
 - 
   icon: facebook-f
-  hyperlink: https://www.facebook.com/kaitlin.moor
+  hyperlink: https://www.facebook.com/luke.c.hartman
+- 
+  icon: linkedin-in
+  hyperlink: >
+    https://www.linkedin.com/in/lukecarlhartman/
+- 
+  icon: google-plus-g
+  hyperlink: https://plus.google.com/u/1/+LukeHartman

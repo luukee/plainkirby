@@ -1,0 +1,31 @@
+Title: Hidden Info
+
+----
+
+Date: 
+
+----
+
+Coverimage: email-development-main-image-luke-carl-hartman.jpg
+
+----
+
+Text: 
+
+Email Campaigns
+<div class="iframe-wrapper">
+<iframe src="https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=b2e5603b94" id="iframe" height="600" width="700" style="2px solid rgba(0, 0, 0, 0.05)"></iframe>
+</div>
+https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=b2e5603b94
+https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=6fc03bf2d2
+https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=a69882de08
+https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=16ababc06f
+https://us4.campaign-archive.com/?u=878c0dbde4c05305271f03762&id=d0fcfb40ec
+
+----
+
+Description: 
+
+----
+
+Keywords: 

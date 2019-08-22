@@ -1,6 +1,16 @@
 body,
 time {
     font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: subpixel-antialiased;
+    letter-spacing: 1.15px;
+}
+
+// main title
+h2.title {
+    a {
+        z-index: 9;
+    }
 }
 
 h1,
@@ -16,9 +26,11 @@ h5 {
 
 h1 {
 	color: $primary-color;
-    font-size: 3em;
+    color: #c7eef9;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.61);
     @media print, screen and (max-width: 30em) {
-        font-size: 2.5em;
+        font-size: 1.25em;
     }
 }
 
@@ -30,15 +42,23 @@ h2 {
 // date
 time {
     color: $secondary-color;
+    font-size: 11px;
 }
-
+code {
+    padding: 1em;
+    box-sizing: border-box;
+    display: block;
+    background: #52f1ff47;
+    border-radius: 4px;
+    color: grey;
+}
 // Font Awesome Icons
 header .social {
     .fab {
-        font-size: 12px;
-    }
-    @media screen and (max-width: 30em) {
-        color: $black;
+        font-size: 16px;
+        @media screen and (max-width: 30em) {
+            display: none;
+        }
     }
 }
 
@@ -47,5 +67,25 @@ time {
     &.dark {
         color: $black;
         line-height: 40px;
+    }
+}
+
+// homepage grow
+
+#home {
+    h2:not(.title) {
+        font-size: 2rem;
+        animation: fadeAndScale 8s cubic-bezier(.71,.55,.62,1.57) infinite alternate;
+    }
+}
+
+@keyframes fadeAndScale {
+    from {
+        // opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        // opacity: 1;
+        transform: scale(1.1, 1.1);
     }
 }

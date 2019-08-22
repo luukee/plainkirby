@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirbywebp">Kirby WebP</h1>
+
+<p><a href="https://github.com/S1SYPHOS/kirby-webp/releases"><img src="https://img.shields.io/github/release/S1SYPHOS/kirby-webp.svg?color="brightgreen"" alt="Release" /></a> <a href="https://github.com/S1SYPHOS/kirby-webp/blob/master/LICENSE"><img src="https://img.shields.io/github/license/S1SYPHOS/kirby-webp.svg" alt="License" /></a> <a href="https://github.com/S1SYPHOS/kirby-webp/issues"><img src="https://img.shields.io/github/issues/S1SYPHOS/kirby-webp.svg" alt="Issues" /></a></p>
+
+<p>This plugin generates WebP images alongside your uploaded JPGs &amp; PNGs - so <strong>you</strong> don&#8217;t have to.</p>
+
+<p><strong>Table of contents</strong></p>
+
+<ul>
+<li><a href="#whats-is-it-good-for">1. What is it good for?</a></li>
+<li><a href="#getting-started">2. Getting started</a></li>
+<li><a href="#configuration">3. Configuration</a></li>
+<li><a href="#options">4. Options</a></li>
+<li><a href="#troubleshooting">5. Troubleshooting</a></li>
+<li><a href="#credits--license">6. Credits / License</a></li>
+</ul>
+
+<h2 id="whatisitgoodfor">What is it good for?</h2>
+
+<p>Absolutely .. smaller image size:</p>
+
+<blockquote>
+<p>WebP is a method of lossy and lossless compression that can be used on a large variety of photographic, translucent and graphical images found on the web. The degree of lossy compression is adjustable so a user can choose the trade-off between file size and image quality. WebP typically achieves an average of 30% more compression than JPEG and JPEG 2000, without loss of image quality (see <a href="https://developers.google.com/speed/webp/docs/c_study">Comparative Study</a>).</p>
+
+<p><a href="https://developers.google.com/speed/webp/faq">Google Developers</a></p>
+</blockquote>
+
+<p>Current <a href="https://caniuse.com/#feat=webp">browser support</a> for WebP images is decent (Chrome, Opera &amp; most mobile browsers), although heavily depending on your target region (ranging from North America (60%) &amp; Europe (65%) to over 80% in Africa &amp; South America).</p>
+
+<p>For further information, including criticism, check out its <a href="https://en.wikipedia.org/wiki/WebP">Wikipedia article</a>. That being said, another interesting approach gearing towards the replacement of JPEG is Fabrice Bellard&#8217;s &#8220;<a href="https://bellard.org/bpg">Better Portable Graphics</a>&#8221; (BPG) format.</p>
+
+<h2 id="gettingstarted">Getting started</h2>
+
+<p>Use one of the following methods to install &amp; use <code>kirby-webp</code>:</p>
+
+<h3 id="composer">Composer</h3>
+
+<pre><code class="text">composer require S1SYPHOS/kirby-webp:dev-composer
+</code></pre>
+
+<h3 id="gitsubmodule">Git submodule</h3>
+
+<p>If you know your way around Git, you can download this plugin as a <a href="https://github.com/blog/2104-working-with-submodules">submodule</a>:</p>
+
+<pre><code class="text">git submodule add https://github.com/S1SYPHOS/kirby-webp.git site/plugins/kirby-webp
+</code></pre>
+
+<h3 id="cloneordownload">Clone or download</h3>
+
+<ol>
+<li><a href="https://github.com/S1SYPHOS/kirby-webp.git">Clone</a> or <a href="https://github.com/S1SYPHOS/kirby-webp/archive/master.zip">download</a> this repository.</li>
+<li>Unzip / Move the folder to <code>site/plugins</code>.</li>
+</ol>
+
+<h3 id="activatetheplugin">Activate the plugin</h3>
+
+<p>Activate the plugin with the following line in your <code>config.php</code>:</p>
+
+<pre><code class="text">c::set('plugin.kirby-webp', true);
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>After uploading some images, you are now officially ready to serve their newly generated WebP versions.</p>
+
+<h3 id="apache">Apache</h3>
+
+<p>If you&#8217;re using <a href="http://httpd.apache.org/">Apache</a> as your webserver, add the following lines to your <code>.htaccess</code>:</p>
+
+<pre><code class="text">&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+
+  #Checking for WebP browser support ..
+  RewriteCond %{HTTP_ACCEPT} image/webp
+
+  #.. and if there's a WebP version for the requested image
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+
+  #Well, then go for it &amp; serve WebP instead
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_headers.c&gt;
+  Header append Vary Accept env=REDIRECT_accept
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_mime.c&gt;
+  AddType image/webp .webp
+&lt;/IfModule&gt;
+</code></pre>
+
+<h3 id="nginx">NGINX</h3>
+
+<p>If you&#8217;re using <a href="https://nginx.org/en/">NGINX</a> as your webserver, add the following lines to your virtual host setup (for more information, go <a href="https://github.com/uhop/grunt-tight-sprite/wiki/Recipe:-serve-WebP-with-nginx-conditionally">here</a> or <a href="https://optimus.keycdn.com/support/configuration-to-deliver-webp">there</a>):</p>
+
+<pre><code class="text">// First, make sure that NGINX' `mime.types` file includes 'image/webp webp'
+include /etc/nginx/mime.types;
+
+// Checking if HTTP's `ACCEPT` header contains 'webp'
+map $http_accept $webp_suffix {
+  default &quot;&quot;;
+  &quot;~*webp&quot; &quot;.webp&quot;;
+}
+
+server {
+  // ...
+
+  // Checking if there's a WebP version for the requested image ..
+  location ~* ^.+\.(jpe?g|png)$ {
+    add_header Vary Accept;
+    // .. and if so, serving it
+    try_files $1$webp_ext $uri =404;
+  }
+}
+</code></pre>
+
+<h2 id="options">Options</h2>
+
+<p>Change <code>kirby-webp</code> options to suit your needs:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Option </th>
+	<th> Type </th>
+	<th> Default </th>
+	<th> Description </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <code>plugin.kirby-webp.hooks</code> </td>
+	<td> Array </td>
+	<td> <code>['upload']</code> </td>
+	<td> Contains all <code>panel.file.*</code> <a href="https://getkirby.com/docs/developer-guide/advanced/hooks">hooks</a> WebP generation should be applied to (allowed values are <code>upload</code>, <code>update</code>, <code>rename</code> and <code>replace</code>). </td>
+</tr>
+<tr>
+	<td> <code>plugin.kirby-webp.quality</code> </td>
+	<td> Integer </td>
+	<td> <code>90</code> </td>
+	<td> Defines WebP image quality (ranging from 0 to 100). </td>
+</tr>
+<tr>
+	<td> <code>plugin.kirby-webp.stripMetadata</code> </td>
+	<td> Boolean </td>
+	<td> <code>true</code> </td>
+	<td> Optionally enables / disables transfer of JPEG metadata onto the WebP image. </td>
+</tr>
+<tr>
+	<td> <code>plugin.kirby-webp.convertedImage</code> </td>
+	<td> Boolean </td>
+	<td> <code>true</code> </td>
+	<td> Optionally enables / disables output of converted image (<code>false</code> results in text output about the conversion process). </td>
+</tr>
+<tr>
+	<td> <code>plugin.kirby-webp.serveOriginalOnFail</code> </td>
+	<td> Boolean </td>
+	<td> <code>true</code> </td>
+	<td> Defines behavior in case all converters fail - by default, the original image will be served, whereas <code>false</code> will generate an image with the error message. </td>
+</tr>
+<tr>
+	<td> <code>plugin.kirby-webp.converters</code> </td>
+	<td> Array </td>
+	<td> <code>['gd', 'cwebp']</code> </td>
+	<td> Defines the desired order of execution for all supported converters (allowed values are <code>imagick</code>, <code>cwebp</code>, <code>gd</code> and <code>ewww</code>). Note that this only changes their order, but doesn&#8217;t remove any of them. </td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>Despite stating that <code>An unexpected error occurred</code>, WebP generation after renaming / updating images works - <code>replace</code> doesn&#8217;t work at all .. PRs are always welcome :champagne:</p>
+
+<p>Because of that, only <code>upload</code> is included by default. If you wish to investigate this further and / or don&#8217;t care too much about the errror, go ahead with <code>c::set('plugin.webp.actions', ['upload', 'update', 'rename', 'replace']);</code> in your <code>config.php</code>.</p>
+
+<h2 id="creditslicense">Credits / License</h2>
+
+<p><code>kirby-webp</code> is based on Bjørn Rosell&#8217;s <a href="https://github.com/rosell-dk/webp-convert">PHP library</a> <code>webp-convert</code> library. It is licensed under the <a href="LICENSE">MIT License</a>, but <strong>using Kirby in production</strong> requires you to <a href="https://getkirby.com/buy">buy a license</a>. Are you ready for the <a href="https://getkirby.com/next">next step</a>?</p>
+
+<h2 id="specialthanks">Special Thanks</h2>
+
+<p>I&#8217;d like to thank everybody that&#8217;s making great software - you people are awesome. Also I&#8217;m always thankful for feedback and bug reports :)</p>
+
+</body>
+</html>
+

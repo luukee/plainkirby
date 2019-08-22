@@ -2,12 +2,12 @@
 
   <div class="form-element">
     <!-- <label for="firstname">First Name: *</label> -->
-    <input type="text" id="firstname" name="firstname" placeholder="First name" value="<?= isset($data['firstname']) ? esc($data['firstname']) : '' ?>" required/>
+    <input type="text" id="firstname" name="firstname" placeholder="First" value="<?= isset($data['firstname']) ? esc($data['firstname']) : '' ?>" required/>
   </div>
 
   <div class="form-element">
     <!-- <label for="lastname">Last Name: *</label> -->
-    <input type="text" id="lastname" name="lastname" placeholder="Last name" value="<?= isset($data['lastname']) ? esc($data['lastname']) : '' ?>" required/>
+    <input type="text" id="lastname" name="lastname" placeholder="Last" value="<?= isset($data['lastname']) ? esc($data['lastname']) : '' ?>" required/>
   </div>
 
   <div class="form-element">
@@ -17,7 +17,7 @@
 
   <div class="form-element">
     <!-- <label for="message">Message:</label> -->
-    <textarea name="message" id="message" placeholder="Do you have any comments?"><?= isset($data['message']) ? esc($data['message']) : '' ?></textarea>
+    <textarea name="message" id="message" placeholder="Please leave me your kind words here. . ."><?= isset($data['message']) ? esc($data['message']) : '' ?></textarea>
   </div>
 
   <div class="honey">

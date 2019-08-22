@@ -1,6 +1,6 @@
 title: Projects
 
-files: false
+files: true
 
 pages:
   template: project

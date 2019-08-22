@@ -4,13 +4,13 @@ $regular: 400;
 $bold: 600;
 
 // Base Font
-$base-font-family: 'Cormorant Garamond', serif;
+$base-font-family: 'Dosis', sans-serif;
 $base-font-weight: $regular;
-$base-font-size: 13px;
+$base-font-size: 20px;
 $base-line-height: 1.4;
 
 // Title fontface
-$title-font-family: 'Philosopher', sans-serif;
+$title-font-family: 'Dosis', sans-serif;;
 $title-font-weight: $regular;
 $title-font-size: 13px;
 $title-line-height: 1.4;
@@ -22,27 +22,15 @@ $fixed-line-height: $base-line-height;
 
 // Headings
 $header-font-weight: $bold;
-@mixin lgHeroHeader {
-    height: calc(100vh - 3rem);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-@mixin smHeroHeader {
-    height: calc(100vh - 9rem);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    @media screen and (max-width: 30em) {
-        margin-top: 40px;
-    }
-}
 
 // Colors
 $white: #fff;
-$black: #000;
+$black: #111;
 
 
+// media queries
+$break-small: 320px;
+$break-large: 1200px;
 
 @import "../modules/all";

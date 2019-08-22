@@ -36,7 +36,7 @@
         <!-- page text content -->
         <div class="cell">
             <p>
-                <?php echo $page->text()->html() ?>
+                <?= $page->text()->kirbytext() ?>
             </p>
         </div>
 

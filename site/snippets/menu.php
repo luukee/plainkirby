@@ -6,7 +6,7 @@ if ($items->count()):
 
 ?>
 <!-- Menu pulled from: https://codepen.io/luukee/pen/xjwyOV	 -->
-<nav role="navigation" class="small-4 medium-4">
+<nav role="navigation" class="small-2 medium-4">
 	<div id="menuToggle">
 		<input type="checkbox">
 		<span></span>

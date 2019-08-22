@@ -1,6 +1,7 @@
 title: About
 
 files: true
+    sortable: true
 
 pages:
     hide: false
